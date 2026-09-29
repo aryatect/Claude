@@ -2,7 +2,7 @@ name: AI Daily Newsletter
 
 on:
   schedule:
-    - cron: "0 2 * * *" # 02:00 UTC daily; edit to change send time
+    - cron: "0 9 * * *" # 09:00 UTC daily; edit to change send time
   workflow_dispatch:
 
 permissions:
@@ -30,7 +30,7 @@ jobs:
           SMTP_USER: ${{ secrets.SMTP_USER }}
           SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
           MAIL_FROM: ${{ secrets.MAIL_FROM }}
-          NEWSLETTER_RECIPIENTS: ${{ secrets.NEWSLETTER_RECIPIENTS }}
+          NEWSLETTER_RECIPIENTS: ${{ secrets.NEWSLETTER_RECIPIENTS || 'abhinav17@gmail.com' }}
         run: python newsletter.py
       - name: Save sent-buzzword state
         run: |
