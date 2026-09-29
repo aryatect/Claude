@@ -76,3 +76,68 @@ def test_render_escapes_and_shows_sources_and_labels():
     out = nl.render_html(content, date(2026, 9, 29))
     assert "&lt;b&gt;x&lt;/b&gt;" in out and "reuters.com" in out and "FACT" in out
     assert "https://www.reuters.com/a" in nl.render_text(content, date(2026, 9, 29))
+
+
+# ---- no repeats
+SEEN = {"buzzwords": ["Agent containment"],
+        "news": [{"headline": "Nvidia launches Open Agent Safety Platform", "label": "FACT", "date": "2026-09-29"}]}
+
+
+def content(news, buzz=()):
+    return {"buzzwords": [{"term": t, "meaning": "m", "source": {"title": "x", "url": "https://arxiv.org/a", "host": "arxiv.org"}} for t in buzz],
+            "news": news}
+
+
+def n(headline, changed=""):
+    return {"headline": headline, "summary": "s", "label": "FACT", "why_label": "", "what_changed": changed,
+            "sources": [{"title": "R", "url": "https://reuters.com/a", "host": "reuters.com"}]}
+
+
+def test_repeated_buzzword_dropped_case_and_punctuation_insensitive():
+    out = nl.drop_repeats(content([n("Brand new story")], buzz=["agent-containment", "Distillation"]), SEEN)
+    assert [b["term"] for b in out["buzzwords"]] == ["Distillation"]
+
+
+def test_repeated_story_dropped_unless_something_changed():
+    with pytest.raises(RuntimeError):
+        nl.drop_repeats(content([n("Nvidia launches Open Agent Safety Platform for agents")]), SEEN)
+    out = nl.drop_repeats(content([n("Nvidia Open Agent Safety Platform launch", "Anthropic and Microsoft join")]), SEEN)
+    assert out["news"][0]["update"] == "Anthropic and Microsoft join"
+
+
+def test_what_changed_ignored_for_new_story():
+    out = nl.drop_repeats(content([n("Totally different story", "bogus")]), SEEN)
+    assert out["news"][0]["update"] == ""
+
+
+def test_record_sent_replaces_updated_story():
+    c = nl.drop_repeats(content([n("Nvidia Open Agent Safety Platform launch", "more partners")], buzz=["RAG"]),
+                        {"buzzwords": [], "news": SEEN["news"]})
+    seen = nl.record_sent(c, {"buzzwords": [], "news": list(SEEN["news"])}, date(2026, 9, 30))
+    assert len(seen["news"]) == 1 and seen["news"][0]["date"] == "2026-09-30" and seen["buzzwords"] == ["RAG"]
+
+
+# ---- mobile / theme design
+def test_html_is_mobile_and_dark_mode_ready():
+    c = content([n("Story", "changed")], buzz=["RAG"])
+    c["news"][0].update(update="changed")
+    out = nl.render_html(c, date(2026, 9, 30))
+    assert 'name="viewport"' in out and "prefers-color-scheme:dark" in out
+    assert 'name="color-scheme"' in out and "max-width:560px" in out
+    assert "UPDATE" in out and "What changed" in out and "reuters.com" in out
+
+
+def test_no_crawl_outlets_not_searched():
+    assert {"reuters.com", "wired.com"} <= nl.load_no_crawl()
+
+
+def test_render_json_cli(tmp_path, monkeypatch):
+    import subprocess
+    raw = {"buzzwords": [{"term": "RAG", "meaning": "m", "source_title": "t", "source_url": "https://arxiv.org/abs/1"}],
+           "news": [item(headline="Fresh story")]}
+    (tmp_path / "in.json").write_text(json.dumps(raw))
+    (tmp_path / "seen.json").write_text(json.dumps({"buzzwords": [], "news": []}))
+    r = subprocess.run([sys.executable, str(Path(nl.__file__)), "--render-json", str(tmp_path / "in.json"),
+                        "--seen-json", str(tmp_path / "seen.json")], capture_output=True, text=True)
+    assert r.returncode == 0 and "Rendered 1 buzzwords, 1 news" in r.stdout
+    assert "Fresh story" in (Path(nl.__file__).parent / "out" / "latest.html").read_text()

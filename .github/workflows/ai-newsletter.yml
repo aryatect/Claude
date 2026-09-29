@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write # commits newsletter/state/seen_terms.json
+  contents: write # commits newsletter/state/seen.json
 
 concurrency: ai-newsletter
 
@@ -36,5 +36,5 @@ jobs:
         run: |
           git config user.name "newsletter-bot"
           git config user.email "newsletter-bot@users.noreply.github.com"
-          git add newsletter/state/seen_terms.json
+          git add newsletter/state/seen.json
           git diff --cached --quiet || (git commit -m "Update sent buzzword list" && git push)

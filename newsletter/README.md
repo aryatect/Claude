@@ -17,6 +17,15 @@ Change the send time in `.github/workflows/ai-newsletter.yml` (cron is UTC).
     ANTHROPIC_API_KEY=... python newsletter.py --dry-run   # writes out/latest.html
     python -m pytest -q
 
+## No repeats
+Buzzwords and news already sent are stored in `state/seen.json` and never sent again. A story
+returns only if the research states a material change (new facts, confirmation, correction, label
+change); it then carries an UPDATE badge and a "What changed" line.
+
+## Design
+Single column, 560px max, large type and spacing for phones, card layout. Light and dark themes via
+`prefers-color-scheme`, with soft pastel label pills.
+
 ## How labels are enforced
 - Web search is limited to the domains in `sources.json`.
 - Sources must be https, allowlisted, and actually returned by the search.
