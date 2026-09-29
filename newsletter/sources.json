@@ -1,0 +1,15 @@
+{
+  "_comment": "Allowlist of legitimate source domains. Search is restricted to these and any cited URL outside them is dropped. Subdomains are covered. 'primary' = the originator of a claim (company, lab, regulator, paper); a FACT may rest on one primary source.",
+  "primary": [
+    "openai.com", "anthropic.com", "deepmind.google", "blog.google", "ai.google",
+    "ai.meta.com", "about.fb.com", "microsoft.com", "nvidia.com", "aws.amazon.com",
+    "apple.com", "mistral.ai", "x.ai", "huggingface.co", "arxiv.org",
+    "nature.com", "science.org", "nist.gov", "whitehouse.gov", "europa.eu", "gov.uk"
+  ],
+  "press": [
+    "reuters.com", "apnews.com", "bbc.com", "bbc.co.uk", "nytimes.com", "ft.com",
+    "wsj.com", "bloomberg.com", "cnbc.com", "axios.com", "theverge.com",
+    "techcrunch.com", "arstechnica.com", "wired.com", "technologyreview.com",
+    "venturebeat.com", "theinformation.com", "economist.com", "hai.stanford.edu"
+  ]
+}
