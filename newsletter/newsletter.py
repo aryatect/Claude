@@ -407,6 +407,8 @@ def main() -> int:
         OUT_DIR.mkdir(exist_ok=True)
         (OUT_DIR / "latest.html").write_text(render_html(content, today))
         (OUT_DIR / "latest.txt").write_text(render_text(content, today))
+        next_seen = record_sent(content, {"buzzwords": list(seen["buzzwords"]), "news": list(seen["news"])}, today)
+        (OUT_DIR / "next_seen.json").write_text(json.dumps(next_seen, indent=2) + "\n")  # copy to state/seen.json after a successful send
         print(f"Rendered {len(content['buzzwords'])} buzzwords, {len(content['news'])} news to {OUT_DIR}")
         return 0
     seen = load_seen()

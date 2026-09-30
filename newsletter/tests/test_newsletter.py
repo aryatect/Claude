@@ -140,4 +140,7 @@ def test_render_json_cli(tmp_path, monkeypatch):
     r = subprocess.run([sys.executable, str(Path(nl.__file__)), "--render-json", str(tmp_path / "in.json"),
                         "--seen-json", str(tmp_path / "seen.json")], capture_output=True, text=True)
     assert r.returncode == 0 and "Rendered 1 buzzwords, 1 news" in r.stdout
-    assert "Fresh story" in (Path(nl.__file__).parent / "out" / "latest.html").read_text()
+    out = Path(nl.__file__).parent / "out"
+    assert "Fresh story" in (out / "latest.html").read_text()
+    nxt = json.loads((out / "next_seen.json").read_text())
+    assert nxt["buzzwords"] == ["RAG"] and nxt["news"][0]["headline"] == "Fresh story"
