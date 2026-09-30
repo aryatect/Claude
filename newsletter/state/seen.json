@@ -1,5 +1,4 @@
 {
-  "last_sent": "2026-09-29",
   "buzzwords": [
     "Agent containment",
     "Always-on agent",
@@ -8,7 +7,11 @@
     "Recursive self-improvement",
     "Kill switch",
     "Tokens per second",
-    "Cached input pricing"
+    "Cached input pricing",
+    "Superintelligence",
+    "Frontier model",
+    "Connector",
+    "AI czar"
   ],
   "news": [
     {
@@ -65,6 +68,27 @@
       "headline": "Mistral CEO: US AI safety debate masks rivals' 'negligence'",
       "label": "JUDGEMENT",
       "date": "2026-09-30"
+    },
+    {
+      "headline": "Meta brings its Muse AI agent to small businesses",
+      "label": "FACT",
+      "date": "2026-09-30"
+    },
+    {
+      "headline": "Trump floats Jay Clayton as new AI czar",
+      "label": "RUMOR",
+      "date": "2026-09-30"
+    },
+    {
+      "headline": "OpenAI reportedly targets $30 billion in new funding ahead of IPO",
+      "label": "RUMOR",
+      "date": "2026-09-30"
+    },
+    {
+      "headline": "CNBC: with the AI accord, firms will mark their own homework",
+      "label": "JUDGEMENT",
+      "date": "2026-09-30"
     }
-  ]
+  ],
+  "last_sent": "2026-09-30"
 }
