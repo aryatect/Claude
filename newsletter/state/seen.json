@@ -3,7 +3,11 @@
     "Agent containment",
     "Always-on agent",
     "Pacing the frontier",
-    "World models"
+    "World models",
+    "Recursive self-improvement",
+    "Kill switch",
+    "Tokens per second",
+    "Cached input pricing"
   ],
   "news": [
     {
@@ -22,11 +26,6 @@
       "date": "2026-09-29"
     },
     {
-      "headline": "OpenAI reportedly scrapped GPT-6.1 Astra over safety concerns",
-      "label": "RUMOR",
-      "date": "2026-09-29"
-    },
-    {
       "headline": "Palo Alto Networks CEO calls an AI slowdown 'unrealistic'",
       "label": "JUDGEMENT",
       "date": "2026-09-29"
@@ -35,6 +34,36 @@
       "headline": "AI industry mood is shifting from speed to caution",
       "label": "INFERENCE",
       "date": "2026-09-29"
+    },
+    {
+      "headline": "OpenAI scrapped GPT-6.1 Astra release over safety concerns",
+      "label": "FACT",
+      "date": "2026-09-30"
+    },
+    {
+      "headline": "Trump and AI leaders sign voluntary 'accord' at the White House",
+      "label": "FACT",
+      "date": "2026-09-30"
+    },
+    {
+      "headline": "Bloomberg: Trump's backing of independent AI audits marks a 'shift'",
+      "label": "JUDGEMENT",
+      "date": "2026-09-30"
+    },
+    {
+      "headline": "OpenAI launches GPT-6.1 Sol at a fifth of Astra's price",
+      "label": "FACT",
+      "date": "2026-09-30"
+    },
+    {
+      "headline": "Anthropic releases Claude Sonnet 5.5",
+      "label": "FACT",
+      "date": "2026-09-30"
+    },
+    {
+      "headline": "Mistral CEO: US AI safety debate masks rivals' 'negligence'",
+      "label": "JUDGEMENT",
+      "date": "2026-09-30"
     }
   ]
 }

@@ -45,10 +45,15 @@
     "hai.stanford.edu"
   ],
   "no_crawl": [
-    "reuters.com",
     "apnews.com",
+    "arstechnica.com",
+    "bbc.co.uk",
+    "bbc.com",
+    "ft.com",
+    "nytimes.com",
+    "reuters.com",
     "theverge.com",
     "wired.com",
-    "arstechnica.com"
+    "wsj.com"
   ]
 }
