@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "mcp__Gmail__send_message",
+      "Bash(git fetch:*)",
+      "Bash(git checkout:*)",
+      "Bash(git pull:*)",
+      "Bash(git add newsletter/state/seen.json)",
+      "Bash(git commit:*)",
+      "Bash(git push origin claude/ai-newsletter-buzzwords-news-j2a4nk)",
+      "Bash(python newsletter.py:*)",
+      "Bash(python -m pytest:*)",
+      "Bash(cp out/next_seen.json state/seen.json)"
+    ]
+  }
+}

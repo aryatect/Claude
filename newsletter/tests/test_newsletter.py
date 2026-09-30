@@ -144,3 +144,14 @@ def test_render_json_cli(tmp_path, monkeypatch):
     assert "Fresh story" in (out / "latest.html").read_text()
     nxt = json.loads((out / "next_seen.json").read_text())
     assert nxt["buzzwords"] == ["RAG"] and nxt["news"][0]["headline"] == "Fresh story"
+
+
+def test_one_mail_per_day_guard():
+    nl.check_not_sent_today({"last_sent": "2026-09-29"}, date(2026, 9, 30))  # new day: fine
+    with pytest.raises(RuntimeError, match="Already sent today"):
+        nl.check_not_sent_today({"last_sent": "2026-09-30"}, date(2026, 9, 30))
+
+
+def test_record_sent_stamps_last_sent():
+    seen = nl.record_sent({"buzzwords": [], "news": []}, {"buzzwords": [], "news": []}, date(2026, 9, 30))
+    assert seen["last_sent"] == "2026-09-30"

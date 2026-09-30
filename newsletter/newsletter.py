@@ -89,12 +89,14 @@ def load_seen() -> dict:
         data = json.loads(STATE_FILE.read_text())
     except (FileNotFoundError, json.JSONDecodeError):
         data = {}
-    return {"buzzwords": data.get("buzzwords", []), "news": data.get("news", [])}
+    return {"buzzwords": data.get("buzzwords", []), "news": data.get("news", []),
+            "last_sent": data.get("last_sent")}
 
 
 def save_seen(seen: dict) -> None:
     STATE_FILE.parent.mkdir(parents=True, exist_ok=True)
-    out = {"buzzwords": sorted(set(seen["buzzwords"]), key=str.lower),
+    out = {"last_sent": seen.get("last_sent"),
+           "buzzwords": sorted(set(seen["buzzwords"]), key=str.lower),
            "news": seen["news"][-SEEN_NEWS_LIMIT:]}
     STATE_FILE.write_text(json.dumps(out, indent=2) + "\n")
 
@@ -133,7 +135,14 @@ def drop_repeats(content: dict, seen: dict) -> dict:
     return {"buzzwords": buzz, "news": news}
 
 
+def check_not_sent_today(seen: dict, today: date) -> None:
+    """One mail per day: refuse to run again on a day that already has a sent issue."""
+    if seen.get("last_sent") == today.isoformat():
+        raise RuntimeError(f"Already sent today ({today.isoformat()}); not sending a second mail")
+
+
 def record_sent(content: dict, seen: dict, today: date) -> dict:
+    seen["last_sent"] = today.isoformat()
     seen["buzzwords"] += [b["term"] for b in content["buzzwords"]]
     for n in content["news"]:
         seen["news"] = [s for s in seen["news"] if not same_story(n["headline"], s["headline"])]
@@ -402,7 +411,9 @@ def main() -> int:
     primary, press = load_sources()
     if args.render_json:
         seen = json.loads(Path(args.seen_json).read_text()) if args.seen_json else load_seen()
-        seen = {"buzzwords": seen.get("buzzwords", []), "news": seen.get("news", [])}
+        seen = {"buzzwords": seen.get("buzzwords", []), "news": seen.get("news", []),
+                "last_sent": seen.get("last_sent")}
+        check_not_sent_today(seen, today)
         content = drop_repeats(validate(json.loads(Path(args.render_json).read_text()), primary, press, set()), seen)
         OUT_DIR.mkdir(exist_ok=True)
         (OUT_DIR / "latest.html").write_text(render_html(content, today))
@@ -412,6 +423,8 @@ def main() -> int:
         print(f"Rendered {len(content['buzzwords'])} buzzwords, {len(content['news'])} news to {OUT_DIR}")
         return 0
     seen = load_seen()
+    if not args.dry_run:
+        check_not_sent_today(seen, today)
     raw, retrieved = research(seen, today, sorted((primary | press) - load_no_crawl()))
     if not retrieved:
         print("WARNING: no retrieved URLs detected; source-in-results check skipped", file=sys.stderr)
