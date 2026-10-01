@@ -11,7 +11,11 @@
     "Superintelligence",
     "Frontier model",
     "Connector",
-    "AI czar"
+    "AI czar",
+    "Limited release",
+    "Benchmark",
+    "Pre-release model access",
+    "Self-policing"
   ],
   "news": [
     {
@@ -41,11 +45,6 @@
     },
     {
       "headline": "OpenAI scrapped GPT-6.1 Astra release over safety concerns",
-      "label": "FACT",
-      "date": "2026-09-30"
-    },
-    {
-      "headline": "Trump and AI leaders sign voluntary 'accord' at the White House",
       "label": "FACT",
       "date": "2026-09-30"
     },
@@ -88,7 +87,32 @@
       "headline": "CNBC: with the AI accord, firms will mark their own homework",
       "label": "JUDGEMENT",
       "date": "2026-09-30"
+    },
+    {
+      "headline": "Google rolls out Gemini 4 Argon in a limited release",
+      "label": "FACT",
+      "date": "2026-10-01"
+    },
+    {
+      "headline": "Bloomberg: Google staff doubt Gemini 4's coding performance",
+      "label": "RUMOR",
+      "date": "2026-10-01"
+    },
+    {
+      "headline": "Trump signs order to say 'Super Intelligence' instead of 'AI' in federal use",
+      "label": "FACT",
+      "date": "2026-10-01"
+    },
+    {
+      "headline": "Trump and AI leaders sign voluntary 'accord' at the White House",
+      "label": "FACT",
+      "date": "2026-10-01"
+    },
+    {
+      "headline": "CNBC: Trump's AI meeting leaves safety 'more unsettled than ever'",
+      "label": "JUDGEMENT",
+      "date": "2026-10-01"
     }
   ],
-  "last_sent": "2026-09-30"
+  "last_sent": "2026-10-01"
 }
