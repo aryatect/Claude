@@ -15,7 +15,11 @@
     "Limited release",
     "Benchmark",
     "Pre-release model access",
-    "Self-policing"
+    "Self-policing",
+    "Civil investigative demand",
+    "Special-purpose vehicle",
+    "Private credit",
+    "Export controls"
   ],
   "news": [
     {
@@ -112,7 +116,27 @@
       "headline": "CNBC: Trump's AI meeting leaves safety 'more unsettled than ever'",
       "label": "JUDGEMENT",
       "date": "2026-10-01"
+    },
+    {
+      "headline": "FTC is investigating OpenAI, Anthropic and others over AI product risks",
+      "label": "FACT",
+      "date": "2026-10-02"
+    },
+    {
+      "headline": "OpenAI reportedly cuts ties with three safety researchers",
+      "label": "RUMOR",
+      "date": "2026-10-02"
+    },
+    {
+      "headline": "Broadcom reportedly gathers $60 billion to fund AI chips for Anthropic",
+      "label": "RUMOR",
+      "date": "2026-10-02"
+    },
+    {
+      "headline": "PIMCO's Stracke: AI spending, not inflation, is driving bond yields",
+      "label": "JUDGEMENT",
+      "date": "2026-10-02"
     }
   ],
-  "last_sent": "2026-10-01"
+  "last_sent": "2026-10-02"
 }
