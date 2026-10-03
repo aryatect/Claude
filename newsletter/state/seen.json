@@ -19,7 +19,11 @@
     "Civil investigative demand",
     "Special-purpose vehicle",
     "Private credit",
-    "Export controls"
+    "Export controls",
+    "Automated decision-making system",
+    "Strict liability",
+    "Moratorium",
+    "Hyperscale data center"
   ],
   "news": [
     {
@@ -136,7 +140,27 @@
       "headline": "PIMCO's Stracke: AI spending, not inflation, is driving bond yields",
       "label": "JUDGEMENT",
       "date": "2026-10-02"
+    },
+    {
+      "headline": "Data center backlash spreads from the US to Europe and Asia",
+      "label": "FACT",
+      "date": "2026-10-03"
+    },
+    {
+      "headline": "California bans using AI alone to fire or discipline workers",
+      "label": "RUMOR",
+      "date": "2026-10-03"
+    },
+    {
+      "headline": "Hawley and Murphy plan an AI liability bill for hacking by agents",
+      "label": "RUMOR",
+      "date": "2026-10-03"
+    },
+    {
+      "headline": "CNBC: Wall Street wants a breakout personal agent more than Google's new model",
+      "label": "JUDGEMENT",
+      "date": "2026-10-03"
     }
   ],
-  "last_sent": "2026-10-02"
+  "last_sent": "2026-10-03"
 }
