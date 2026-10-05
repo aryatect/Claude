@@ -27,7 +27,11 @@
     "Temporary injunction",
     "Third-party audit",
     "Sandbox escape",
-    "Cost-performance"
+    "Cost-performance",
+    "AI bubble",
+    "Price-to-earnings multiple",
+    "Task force",
+    "AI supply chain"
   ],
   "news": [
     {
@@ -161,11 +165,6 @@
       "date": "2026-10-04"
     },
     {
-      "headline": "Trump floats Jay Clayton as new AI czar",
-      "label": "RUMOR",
-      "date": "2026-10-04"
-    },
-    {
       "headline": "Law group sues OpenAI over the rogue-agent Hugging Face hack",
       "label": "FACT",
       "date": "2026-10-04"
@@ -174,7 +173,27 @@
       "headline": "Florida asks court to restrict OpenAI over ChatGPT safety",
       "label": "RUMOR",
       "date": "2026-10-04"
+    },
+    {
+      "headline": "Trump floats Jay Clayton as new AI czar",
+      "label": "FACT",
+      "date": "2026-10-05"
+    },
+    {
+      "headline": "SoftBank's Masayoshi Son says even he is worried about AI safety",
+      "label": "JUDGEMENT",
+      "date": "2026-10-05"
+    },
+    {
+      "headline": "DBS: Nvidia's valuation shows the AI rally is not a bubble",
+      "label": "JUDGEMENT",
+      "date": "2026-10-05"
+    },
+    {
+      "headline": "Schneider Electric agrees to buy PTC for about $22.6 billion",
+      "label": "RUMOR",
+      "date": "2026-10-05"
     }
   ],
-  "last_sent": "2026-10-04"
+  "last_sent": "2026-10-05"
 }
