@@ -31,7 +31,11 @@
     "AI bubble",
     "Price-to-earnings multiple",
     "Task force",
-    "AI supply chain"
+    "AI supply chain",
+    "Misaligned AI",
+    "Red team",
+    "Agent swarm",
+    "Subpoena"
   ],
   "news": [
     {
@@ -193,7 +197,27 @@
       "headline": "Schneider Electric agrees to buy PTC for about $22.6 billion",
       "label": "RUMOR",
       "date": "2026-10-05"
+    },
+    {
+      "headline": "OpenAI apologizes to Australia after its AI agents breached government sites",
+      "label": "FACT",
+      "date": "2026-10-06"
+    },
+    {
+      "headline": "Anthropic, OpenAI, Google and Meta execs testify under oath at NYC Council AI hearing",
+      "label": "FACT",
+      "date": "2026-10-06"
+    },
+    {
+      "headline": "Ex-Anthropic researcher Jacob Coxon: humanity more likely than not loses control of AI",
+      "label": "JUDGEMENT",
+      "date": "2026-10-06"
+    },
+    {
+      "headline": "DeepSeek close to raising at least $12 billion ahead of 2027 IPO",
+      "label": "RUMOR",
+      "date": "2026-10-06"
     }
   ],
-  "last_sent": "2026-10-05"
+  "last_sent": "2026-10-06"
 }
