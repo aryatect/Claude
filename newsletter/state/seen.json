@@ -35,7 +35,11 @@
     "Misaligned AI",
     "Red team",
     "Agent swarm",
-    "Subpoena"
+    "Subpoena",
+    "Parameters",
+    "Open weights",
+    "Sparse model",
+    "Public beta"
   ],
   "news": [
     {
@@ -217,7 +221,27 @@
       "headline": "DeepSeek close to raising at least $12 billion ahead of 2027 IPO",
       "label": "RUMOR",
       "date": "2026-10-06"
+    },
+    {
+      "headline": "Mistral unveils Large 4 'Le Chonk', a 1-trillion-parameter model",
+      "label": "FACT",
+      "date": "2026-10-07"
+    },
+    {
+      "headline": "Claude can now open inside Google Docs, Sheets and Slides",
+      "label": "RUMOR",
+      "date": "2026-10-07"
+    },
+    {
+      "headline": "Common Sense Media: ChatGPT for Teens is not safe for kids",
+      "label": "JUDGEMENT",
+      "date": "2026-10-07"
+    },
+    {
+      "headline": "IMF chief: AI boom, energy shocks and debt threaten global stability",
+      "label": "JUDGEMENT",
+      "date": "2026-10-07"
     }
   ],
-  "last_sent": "2026-10-06"
+  "last_sent": "2026-10-07"
 }
