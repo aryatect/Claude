@@ -39,7 +39,11 @@
     "Parameters",
     "Open weights",
     "Sparse model",
-    "Public beta"
+    "Public beta",
+    "AI watermark",
+    "Price per million tokens",
+    "Small model",
+    "Debt financing"
   ],
   "news": [
     {
@@ -241,7 +245,27 @@
       "headline": "IMF chief: AI boom, energy shocks and debt threaten global stability",
       "label": "JUDGEMENT",
       "date": "2026-10-07"
+    },
+    {
+      "headline": "Anthropic launches Claude Haiku 5.5 with big price cuts",
+      "label": "FACT",
+      "date": "2026-10-08"
+    },
+    {
+      "headline": "Google opens its SynthID detector to the public",
+      "label": "FACT",
+      "date": "2026-10-08"
+    },
+    {
+      "headline": "Ray Dalio: AI is a 'classic bubble' nearing its burst point",
+      "label": "JUDGEMENT",
+      "date": "2026-10-08"
+    },
+    {
+      "headline": "Musk's SpaceX reportedly wants $40 billion to buy chips",
+      "label": "RUMOR",
+      "date": "2026-10-08"
     }
   ],
-  "last_sent": "2026-10-07"
+  "last_sent": "2026-10-08"
 }
