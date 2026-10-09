@@ -43,7 +43,11 @@
     "AI watermark",
     "Price per million tokens",
     "Small model",
-    "Debt financing"
+    "Debt financing",
+    "Run rate",
+    "Gross vs net revenue",
+    "Model routing",
+    "Valuation"
   ],
   "news": [
     {
@@ -172,11 +176,6 @@
       "date": "2026-10-03"
     },
     {
-      "headline": "OpenAI reportedly cuts ties with three safety researchers",
-      "label": "FACT",
-      "date": "2026-10-04"
-    },
-    {
       "headline": "Law group sues OpenAI over the rogue-agent Hugging Face hack",
       "label": "FACT",
       "date": "2026-10-04"
@@ -265,7 +264,27 @@
       "headline": "Musk's SpaceX reportedly wants $40 billion to buy chips",
       "label": "RUMOR",
       "date": "2026-10-08"
+    },
+    {
+      "headline": "OpenAI's annualized revenue is about $50 billion, below earlier reports",
+      "label": "FACT",
+      "date": "2026-10-09"
+    },
+    {
+      "headline": "Nvidia commits $1 billion over five years to US science",
+      "label": "FACT",
+      "date": "2026-10-09"
+    },
+    {
+      "headline": "Google brings agentic Gemini to businesses",
+      "label": "FACT",
+      "date": "2026-10-09"
+    },
+    {
+      "headline": "OpenAI reportedly cuts ties with three safety researchers",
+      "label": "FACT",
+      "date": "2026-10-09"
     }
   ],
-  "last_sent": "2026-10-08"
+  "last_sent": "2026-10-09"
 }
