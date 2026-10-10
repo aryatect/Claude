@@ -47,7 +47,11 @@
     "Run rate",
     "Gross vs net revenue",
     "Model routing",
-    "Valuation"
+    "Valuation",
+    "Custom AI chip",
+    "Gigawatt of compute",
+    "Series B",
+    "Acquisition"
   ],
   "news": [
     {
@@ -284,7 +288,22 @@
       "headline": "OpenAI reportedly cuts ties with three safety researchers",
       "label": "FACT",
       "date": "2026-10-09"
+    },
+    {
+      "headline": "Manus raises over $500 million in first round since Meta deal fell through",
+      "label": "FACT",
+      "date": "2026-10-10"
+    },
+    {
+      "headline": "Broadcom reportedly plans $50 billion financing for OpenAI chips",
+      "label": "RUMOR",
+      "date": "2026-10-10"
+    },
+    {
+      "headline": "OpenAI and Anthropic reportedly hire former Trump officials",
+      "label": "RUMOR",
+      "date": "2026-10-10"
     }
   ],
-  "last_sent": "2026-10-09"
+  "last_sent": "2026-10-10"
 }
