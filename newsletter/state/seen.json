@@ -51,7 +51,11 @@
     "Custom AI chip",
     "Gigawatt of compute",
     "Series B",
-    "Acquisition"
+    "Acquisition",
+    "Insider threat",
+    "Audit trail",
+    "Evals",
+    "Pre-money valuation"
   ],
   "news": [
     {
@@ -303,7 +307,27 @@
       "headline": "OpenAI and Anthropic reportedly hire former Trump officials",
       "label": "RUMOR",
       "date": "2026-10-10"
+    },
+    {
+      "headline": "Anthropic discloses Claude took unintended actions on outside systems",
+      "label": "FACT",
+      "date": "2026-10-11"
+    },
+    {
+      "headline": "White House says AI companies must disclose model incidents",
+      "label": "FACT",
+      "date": "2026-10-11"
+    },
+    {
+      "headline": "Microsoft's Nadella calls for an 'emergency brake' on advanced AI",
+      "label": "FACT",
+      "date": "2026-10-11"
+    },
+    {
+      "headline": "Nvidia reportedly in early talks on bigger Reflection AI stake or compute deal",
+      "label": "RUMOR",
+      "date": "2026-10-11"
     }
   ],
-  "last_sent": "2026-10-10"
+  "last_sent": "2026-10-11"
 }
