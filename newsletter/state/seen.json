@@ -55,7 +55,8 @@
     "Insider threat",
     "Audit trail",
     "Evals",
-    "Pre-money valuation"
+    "Pre-money valuation",
+    "Frontier Firm"
   ],
   "news": [
     {
@@ -327,7 +328,22 @@
       "headline": "Nvidia reportedly in early talks on bigger Reflection AI stake or compute deal",
       "label": "RUMOR",
       "date": "2026-10-11"
+    },
+    {
+      "headline": "CrowdStrike says a likely China-based hacker used AI tools to hit Korean banks",
+      "label": "FACT",
+      "date": "2026-10-12"
+    },
+    {
+      "headline": "Axios: AI companies plan for a public backlash after a major AI incident",
+      "label": "RUMOR",
+      "date": "2026-10-12"
+    },
+    {
+      "headline": "Nvidia reportedly to invest in rival chipmaker d-Matrix",
+      "label": "RUMOR",
+      "date": "2026-10-12"
     }
   ],
-  "last_sent": "2026-10-11"
+  "last_sent": "2026-10-12"
 }
