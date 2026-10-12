@@ -27,8 +27,6 @@ OUT_DIR = HERE / "out"
 
 MODEL = os.environ.get("NEWSLETTER_MODEL", "claude-sonnet-5-5")
 MAX_CONTINUATIONS = 5
-NUM_BUZZWORDS = 5
-NUM_NEWS = 6
 
 LABELS = ("FACT", "JUDGEMENT", "INFERENCE", "RUMOR")
 LABEL_COLORS = {
@@ -49,12 +47,17 @@ Use the web_search tool. Every claim must come from a page you actually retrieve
 Never invent a URL, a quote, a date, or a source. If you cannot find enough, return fewer items.
 
 Never repeat anything already sent. You get lists of already-sent buzzwords and news.
-Section 1 - BUZZWORDS: {NUM_BUZZWORDS} AI buzzwords or jargon terms that are new or trending
-right now and NOT in the already-sent buzzword list. Each gets a plain-English meaning in at most
-25 words (explain like the reader is smart but new to AI, no jargon inside the explanation)
-and one source URL that defines or uses the term.
+Section 1 - TERMS: AI-only terms (AI, machine learning, models, agents, chips for AI, AI policy
+and safety). Not general business or finance words. Include as many new or trending AI buzzwords as
+the day genuinely offers, NOT in the already-sent list: it can be one, it can be several, never pad.
+Each gets a plain-English meaning in at most 25 words (explain like the reader is smart but new to AI,
+no jargon inside the explanation) and one source URL that defines or uses the term. Set kind to "buzzword".
+If there is NO genuinely new AI buzzword today, return exactly one established AI concept that is not in
+the already-sent list, set kind to "concept", and explain it the same way. It is an older idea, not a
+buzzword, and the email says so.
 
-Section 2 - NEWS: up to {NUM_NEWS} AI news items from the last 48 hours, each with a summary of at
+Section 2 - NEWS: every AI news item from the last 48 hours that is significant and verifiable, as many
+as the day offers (zero is fine on a quiet day, never pad), each with a summary of at
 most 40 words and 1-3 source URLs. Label every item with exactly one label:
 - FACT: confirmed by a primary source (the company, lab, regulator or paper itself) or by 2+
   independent reputable outlets.
@@ -68,7 +71,7 @@ A story in the already-sent news list may be included ONLY if something material
 in at most 20 words in what_changed. Otherwise leave it out. For new stories what_changed is "".
 
 Reply with ONLY one JSON object, no prose, in this shape:
-{{"buzzwords":[{{"term":"","meaning":"","source_title":"","source_url":""}}],
+{{"buzzwords":[{{"term":"","kind":"buzzword|concept","meaning":"","source_title":"","source_url":""}}],
  "news":[{{"headline":"","summary":"","label":"FACT|JUDGEMENT|INFERENCE|RUMOR","why_label":"","what_changed":"",
            "sources":[{{"title":"","url":""}}]}}]}}"""
 
@@ -243,7 +246,8 @@ def validate(data: dict, primary: set[str], press: set[str], retrieved: set[str]
         src = _clean_sources([{"title": b.get("source_title"), "url": b.get("source_url")}],
                              primary, press, retrieved)
         if b.get("term") and b.get("meaning") and src:
-            buzz.append({"term": b["term"].strip(), "meaning": b["meaning"].strip(), "source": src[0]})
+            buzz.append({"term": b["term"].strip(), "meaning": b["meaning"].strip(), "source": src[0],
+                         "kind": "concept" if b.get("kind") == "concept" else "buzzword"})
 
     news = []
     for n in data.get("news", []):
@@ -273,15 +277,17 @@ def validate(data: dict, primary: set[str], press: set[str], retrieved: set[str]
 # fills so the layout holds even in clients that strip <style> or force their own dark mode.
 BADGE_LIGHT = {"FACT": ("#e3f4e8", "#1b6b34"), "JUDGEMENT": ("#ece6fa", "#5b3fb0"),
                "INFERENCE": ("#fbf0d6", "#7a5a05"), "RUMOR": ("#fbe4e4", "#a4262c"),
-               "UPDATE": ("#e2eefc", "#1f5fae")}
+               "UPDATE": ("#e2eefc", "#1f5fae"),
+               "OLDER CONCEPT": ("#e6f2f2", "#1d6a6a")}
 BADGE_DARK = {"FACT": ("#16321f", "#86e0a3"), "JUDGEMENT": ("#2a2244", "#c3b0f5"),
               "INFERENCE": ("#3a2f12", "#f0cd6e"), "RUMOR": ("#3d1c1e", "#f4a3a6"),
-              "UPDATE": ("#16283f", "#9cc4f5")}
+              "UPDATE": ("#16283f", "#9cc4f5"),
+              "OLDER CONCEPT": ("#14302f", "#8fd6d3")}
 FONT = "-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif"
 
 
 def _css() -> str:
-    dark = "".join(f".b-{k.lower()}{{background:{bg}!important;color:{fg}!important}}"
+    dark = "".join(f".b-{k.lower().replace(chr(32), '-')}{{background:{bg}!important;color:{fg}!important}}"
                    for k, (bg, fg) in BADGE_DARK.items())
     return (":root{color-scheme:light dark;supported-color-schemes:light dark}"
             "@media (prefers-color-scheme:dark){"
@@ -293,7 +299,8 @@ def _css() -> str:
 
 def _badge(label: str) -> str:
     bg, fg = BADGE_LIGHT[label]
-    return (f'<span class="b-{label.lower()}" style="display:inline-block;background:{bg};color:{fg};'
+    cls = label.lower().replace(" ", "-")
+    return (f'<span class="b-{cls}" style="display:inline-block;background:{bg};color:{fg};'
             f'font-size:11px;font-weight:700;letter-spacing:.08em;padding:4px 10px;border-radius:999px">{label}</span>')
 
 
@@ -321,19 +328,23 @@ def render_html(content: dict, today: date) -> str:
         f'<title>AI Daily Brief</title><style>{_css()}</style></head>'
         f'<body style="margin:0;padding:0;background:#f3f5f8;color:#1c2229">'
         f'<div style="display:none;max-height:0;overflow:hidden;opacity:0">'
-        f'{len(content["buzzwords"])} new AI terms and {len(content["news"])} fact-checked stories.</div>'
+        f'{len(content["buzzwords"])} AI terms and {len(content["news"])} fact-checked stories.</div>'
         f'<div class="page" style="background:#f3f5f8;padding:24px 16px;font-family:{FONT};font-size:16px;line-height:1.6">'
         '<div style="max-width:560px;margin:0 auto">',
         f'<h1 style="margin:8px 4px 4px;font-size:28px;line-height:1.2;font-weight:700">AI Daily Brief</h1>'
         f'<p class="muted" style="margin:0 4px;font-size:15px;{muted}">{today:%A, %-d %B %Y}</p>',
     ]
     if content["buzzwords"]:
-        parts.append(heading("Buzzwords", len(content["buzzwords"])))
+        parts.append(heading("AI Terms", len(content["buzzwords"])))
         for b in content["buzzwords"]:
+            old = b.get("kind") == "concept"
+            tag = f'<div style="margin:0 0 12px">{_badge("OLDER CONCEPT")}</div>' if old else ""
+            note = (f'<div class="muted" style="margin-top:10px;font-size:14px;line-height:1.5;{muted}">'
+                    'Not a new buzzword: an established AI idea, shown because no new buzzword turned up today.</div>') if old else ""
             parts.append(
-                f'<div class="card" style="{card}"><div style="font-size:18px;font-weight:700;margin:0 0 6px">{e(b["term"])}</div>'
+                f'<div class="card" style="{card}">{tag}<div style="font-size:18px;font-weight:700;margin:0 0 6px">{e(b["term"])}</div>'
                 f'<div style="font-size:16px;line-height:1.6">{e(b["meaning"])}</div>'
-                f'{sources([b["source"]])}</div>')
+                f'{note}{sources([b["source"]])}</div>')
     if content["news"]:
         parts.append(heading("AI News", len(content["news"])))
         for n in content["news"]:
@@ -361,9 +372,13 @@ def render_html(content: dict, today: date) -> str:
 def render_text(content: dict, today: date) -> str:
     lines = [f"AI DAILY BRIEF", f"{today:%A, %-d %B %Y}", ""]
     if content["buzzwords"]:
-        lines += ["BUZZWORDS", ""]
+        lines += ["AI TERMS", ""]
         for b in content["buzzwords"]:
-            lines += [b["term"], f"  {b['meaning']}", f"  Source: {b['source']['url']}", ""]
+            old = b.get("kind") == "concept"
+            lines += [b["term"] + (" [OLDER CONCEPT]" if old else ""), f"  {b['meaning']}"]
+            if old:
+                lines.append("  Not a new buzzword: an established AI idea, shown because no new buzzword turned up today.")
+            lines += [f"  Source: {b['source']['url']}", ""]
     if content["news"]:
         lines += ["AI NEWS", ""]
         for n in content["news"]:

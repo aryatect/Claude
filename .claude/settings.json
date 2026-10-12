@@ -3,15 +3,29 @@
     "allow": [
       "WebSearch",
       "mcp__Gmail__send_message",
+      "Read",
+      "Write(newsletter/research.json)",
+      "Write(research.json)",
+      "Edit(newsletter/research.json)",
+      "Edit(research.json)",
+      "Bash(cd:*)",
+      "Bash(git status:*)",
+      "Bash(git branch:*)",
       "Bash(git fetch:*)",
       "Bash(git checkout:*)",
       "Bash(git pull:*)",
       "Bash(git add newsletter/state/seen.json)",
+      "Bash(git add state/seen.json)",
       "Bash(git commit:*)",
       "Bash(git push origin claude/ai-newsletter-buzzwords-news-j2a4nk)",
       "Bash(python newsletter.py:*)",
       "Bash(python -m pytest:*)",
-      "Bash(cp out/next_seen.json state/seen.json)"
+      "Bash(cp out/next_seen.json state/seen.json)",
+      "Bash(cp newsletter/out/next_seen.json newsletter/state/seen.json)",
+      "Bash(cat out/latest.txt)",
+      "Bash(cat out/latest.html)",
+      "Bash(cat newsletter/out/latest.txt)",
+      "Bash(cat newsletter/out/latest.html)"
     ]
   }
 }

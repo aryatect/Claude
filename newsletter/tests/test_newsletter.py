@@ -155,3 +155,13 @@ def test_one_mail_per_day_guard():
 def test_record_sent_stamps_last_sent():
     seen = nl.record_sent({"buzzwords": [], "news": []}, {"buzzwords": [], "news": []}, date(2026, 9, 30))
     assert seen["last_sent"] == "2026-09-30"
+
+
+def test_concept_kind_is_kept_and_labelled_in_render():
+    data = {"buzzwords": [
+        {"term": "Backpropagation", "kind": "concept", "meaning": "m", "source_title": "t", "source_url": "https://arxiv.org/abs/1"},
+        {"term": "RAG", "meaning": "m", "source_title": "t", "source_url": "https://arxiv.org/abs/2"}], "news": []}
+    c = run(data)
+    assert [b["kind"] for b in c["buzzwords"]] == ["concept", "buzzword"]
+    h, t = nl.render_html(c, date(2026, 10, 12)), nl.render_text(c, date(2026, 10, 12))
+    assert "OLDER CONCEPT" in h and "Not a new buzzword" in h and "[OLDER CONCEPT]" in t and "AI Terms" in h
