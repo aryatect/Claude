@@ -56,7 +56,8 @@
     "Audit trail",
     "Evals",
     "Pre-money valuation",
-    "Frontier Firm"
+    "Frontier Firm",
+    "Context window"
   ],
   "news": [
     {
@@ -343,7 +344,22 @@
       "headline": "Nvidia reportedly to invest in rival chipmaker d-Matrix",
       "label": "RUMOR",
       "date": "2026-10-12"
+    },
+    {
+      "headline": "Meta releases its first frontier-class models, Muse Wonder and Muse Wonder Full",
+      "label": "FACT",
+      "date": "2026-10-13"
+    },
+    {
+      "headline": "Broadcom CEO Hock Tan likens many AI investors to casino gamblers",
+      "label": "JUDGEMENT",
+      "date": "2026-10-13"
+    },
+    {
+      "headline": "SpaceX agrees to testify to NYC Council on AI safety after subpoena",
+      "label": "RUMOR",
+      "date": "2026-10-13"
     }
   ],
-  "last_sent": "2026-10-12"
+  "last_sent": "2026-10-13"
 }
