@@ -57,7 +57,8 @@
     "Evals",
     "Pre-money valuation",
     "Frontier Firm",
-    "Context window"
+    "Context window",
+    "Inference"
   ],
   "news": [
     {
@@ -124,11 +125,6 @@
       "headline": "CNBC: with the AI accord, firms will mark their own homework",
       "label": "JUDGEMENT",
       "date": "2026-09-30"
-    },
-    {
-      "headline": "Google rolls out Gemini 4 Argon in a limited release",
-      "label": "FACT",
-      "date": "2026-10-01"
     },
     {
       "headline": "Bloomberg: Google staff doubt Gemini 4's coding performance",
@@ -359,7 +355,27 @@
       "headline": "SpaceX agrees to testify to NYC Council on AI safety after subpoena",
       "label": "RUMOR",
       "date": "2026-10-13"
+    },
+    {
+      "headline": "Google rolls out Gemini 4 Argon in a limited release",
+      "label": "FACT",
+      "date": "2026-10-14"
+    },
+    {
+      "headline": "JPMorgan blocks outside AI agents from operating inside the bank",
+      "label": "FACT",
+      "date": "2026-10-14"
+    },
+    {
+      "headline": "Anthropic asks full D.C. appeals court to rehear Pentagon blacklisting case",
+      "label": "FACT",
+      "date": "2026-10-14"
+    },
+    {
+      "headline": "Character.ai files for Chapter 11 bankruptcy",
+      "label": "FACT",
+      "date": "2026-10-14"
     }
   ],
-  "last_sent": "2026-10-13"
+  "last_sent": "2026-10-14"
 }
