@@ -58,7 +58,8 @@
     "Pre-money valuation",
     "Frontier Firm",
     "Context window",
-    "Inference"
+    "Inference",
+    "Agent protocol"
   ],
   "news": [
     {
@@ -375,7 +376,22 @@
       "headline": "Character.ai files for Chapter 11 bankruptcy",
       "label": "FACT",
       "date": "2026-10-14"
+    },
+    {
+      "headline": "Kospi falls nearly 8% into a bear market as AI and chip stocks slide",
+      "label": "FACT",
+      "date": "2026-10-15"
+    },
+    {
+      "headline": "TSMC posts a sixth straight record quarterly profit on AI chip demand",
+      "label": "FACT",
+      "date": "2026-10-15"
+    },
+    {
+      "headline": "White House AI task force reportedly to hold its first meeting Thursday",
+      "label": "RUMOR",
+      "date": "2026-10-15"
     }
   ],
-  "last_sent": "2026-10-14"
+  "last_sent": "2026-10-15"
 }
