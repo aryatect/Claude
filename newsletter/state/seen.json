@@ -59,7 +59,8 @@
     "Frontier Firm",
     "Context window",
     "Inference",
-    "Agent protocol"
+    "Agent protocol",
+    "Mixture of experts"
   ],
   "news": [
     {
@@ -388,10 +389,20 @@
       "date": "2026-10-15"
     },
     {
+      "headline": "Meta launches Muse Spark Open, an open-weight model that runs on Macs",
+      "label": "FACT",
+      "date": "2026-10-16"
+    },
+    {
       "headline": "White House AI task force reportedly to hold its first meeting Thursday",
       "label": "RUMOR",
-      "date": "2026-10-15"
+      "date": "2026-10-16"
+    },
+    {
+      "headline": "China proposes export controls on AI models, chips and agents",
+      "label": "RUMOR",
+      "date": "2026-10-16"
     }
   ],
-  "last_sent": "2026-10-15"
+  "last_sent": "2026-10-16"
 }
