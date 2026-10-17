@@ -60,7 +60,8 @@
     "Context window",
     "Inference",
     "Agent protocol",
-    "Mixture of experts"
+    "Mixture of experts",
+    "Local AI"
   ],
   "news": [
     {
@@ -147,11 +148,6 @@
       "headline": "CNBC: Trump's AI meeting leaves safety 'more unsettled than ever'",
       "label": "JUDGEMENT",
       "date": "2026-10-01"
-    },
-    {
-      "headline": "FTC is investigating OpenAI, Anthropic and others over AI product risks",
-      "label": "FACT",
-      "date": "2026-10-02"
     },
     {
       "headline": "Broadcom reportedly gathers $60 billion to fund AI chips for Anthropic",
@@ -402,7 +398,27 @@
       "headline": "China proposes export controls on AI models, chips and agents",
       "label": "RUMOR",
       "date": "2026-10-16"
+    },
+    {
+      "headline": "Eight states sue OpenAI, saying ChatGPT harms children",
+      "label": "FACT",
+      "date": "2026-10-17"
+    },
+    {
+      "headline": "FTC is investigating OpenAI, Anthropic and others over AI product risks",
+      "label": "FACT",
+      "date": "2026-10-17"
+    },
+    {
+      "headline": "Nvidia RTX Spark laptops go on sale for local AI",
+      "label": "FACT",
+      "date": "2026-10-17"
+    },
+    {
+      "headline": "Replit CEO says the company is no longer working with Anthropic",
+      "label": "RUMOR",
+      "date": "2026-10-17"
     }
   ],
-  "last_sent": "2026-10-16"
+  "last_sent": "2026-10-17"
 }
