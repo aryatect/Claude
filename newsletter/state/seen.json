@@ -61,7 +61,8 @@
     "Inference",
     "Agent protocol",
     "Mixture of experts",
-    "Local AI"
+    "Local AI",
+    "Embedded evaluator"
   ],
   "news": [
     {
@@ -415,10 +416,20 @@
       "date": "2026-10-17"
     },
     {
+      "headline": "Anthropic gives METR employee-level access to assess its AI risks",
+      "label": "FACT",
+      "date": "2026-10-18"
+    },
+    {
+      "headline": "CoreWeave debt stress rattles AI stocks; Nvidia's Huang says no backstop needed",
+      "label": "FACT",
+      "date": "2026-10-18"
+    },
+    {
       "headline": "Replit CEO says the company is no longer working with Anthropic",
       "label": "RUMOR",
-      "date": "2026-10-17"
+      "date": "2026-10-18"
     }
   ],
-  "last_sent": "2026-10-17"
+  "last_sent": "2026-10-18"
 }
