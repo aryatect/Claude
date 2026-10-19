@@ -62,7 +62,8 @@
     "Agent protocol",
     "Mixture of experts",
     "Local AI",
-    "Embedded evaluator"
+    "Embedded evaluator",
+    "KV cache"
   ],
   "news": [
     {
@@ -429,7 +430,22 @@
       "headline": "Replit CEO says the company is no longer working with Anthropic",
       "label": "RUMOR",
       "date": "2026-10-18"
+    },
+    {
+      "headline": "Anthropic commits 5% of its shares to a new public benefit fund",
+      "label": "FACT",
+      "date": "2026-10-19"
+    },
+    {
+      "headline": "Anthropic's third-quarter revenue reportedly hit $16.8 billion",
+      "label": "RUMOR",
+      "date": "2026-10-19"
+    },
+    {
+      "headline": "DeepSeek upgrades V4.1-Flash, narrowing the gap with frontier models",
+      "label": "FACT",
+      "date": "2026-10-19"
     }
   ],
-  "last_sent": "2026-10-18"
+  "last_sent": "2026-10-19"
 }
