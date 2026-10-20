@@ -63,7 +63,8 @@
     "Mixture of experts",
     "Local AI",
     "Embedded evaluator",
-    "KV cache"
+    "KV cache",
+    "Guardian agent"
   ],
   "news": [
     {
@@ -445,7 +446,22 @@
       "headline": "DeepSeek upgrades V4.1-Flash, narrowing the gap with frontier models",
       "label": "FACT",
       "date": "2026-10-19"
+    },
+    {
+      "headline": "Microsoft launches Guardian Agents to police other AI agents",
+      "label": "FACT",
+      "date": "2026-10-20"
+    },
+    {
+      "headline": "Nvidia releases Nemotron 3.5 Super VL and Bolt open models for agents",
+      "label": "FACT",
+      "date": "2026-10-20"
+    },
+    {
+      "headline": "Anthropic reportedly in talks for a second $45 billion Nscale compute deal",
+      "label": "RUMOR",
+      "date": "2026-10-20"
     }
   ],
-  "last_sent": "2026-10-19"
+  "last_sent": "2026-10-20"
 }
