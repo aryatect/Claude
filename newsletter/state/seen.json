@@ -64,7 +64,8 @@
     "Local AI",
     "Embedded evaluator",
     "KV cache",
-    "Guardian agent"
+    "Guardian agent",
+    "Physical AI"
   ],
   "news": [
     {
@@ -461,7 +462,17 @@
       "headline": "Anthropic reportedly in talks for a second $45 billion Nscale compute deal",
       "label": "RUMOR",
       "date": "2026-10-20"
+    },
+    {
+      "headline": "Nvidia names four German startups for investment at GTC Berlin",
+      "label": "FACT",
+      "date": "2026-10-21"
+    },
+    {
+      "headline": "SpaceX profit beats estimates as its AI business grows sharply",
+      "label": "FACT",
+      "date": "2026-10-21"
     }
   ],
-  "last_sent": "2026-10-20"
+  "last_sent": "2026-10-21"
 }
