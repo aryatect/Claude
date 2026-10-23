@@ -65,7 +65,8 @@
     "Embedded evaluator",
     "KV cache",
     "Guardian agent",
-    "Physical AI"
+    "Physical AI",
+    "Distillation"
   ],
   "news": [
     {
@@ -121,11 +122,6 @@
     {
       "headline": "Meta brings its Muse AI agent to small businesses",
       "label": "FACT",
-      "date": "2026-09-30"
-    },
-    {
-      "headline": "OpenAI reportedly targets $30 billion in new funding ahead of IPO",
-      "label": "RUMOR",
       "date": "2026-09-30"
     },
     {
@@ -226,11 +222,6 @@
     {
       "headline": "Ex-Anthropic researcher Jacob Coxon: humanity more likely than not loses control of AI",
       "label": "JUDGEMENT",
-      "date": "2026-10-06"
-    },
-    {
-      "headline": "DeepSeek close to raising at least $12 billion ahead of 2027 IPO",
-      "label": "RUMOR",
       "date": "2026-10-06"
     },
     {
@@ -472,7 +463,52 @@
       "headline": "SpaceX profit beats estimates as its AI business grows sharply",
       "label": "FACT",
       "date": "2026-10-21"
+    },
+    {
+      "headline": "OpenAI reportedly targets $30 billion in new funding ahead of IPO",
+      "label": "RUMOR",
+      "date": "2026-10-23"
+    },
+    {
+      "headline": "DeepSeek close to raising at least $12 billion ahead of 2027 IPO",
+      "label": "RUMOR",
+      "date": "2026-10-23"
+    },
+    {
+      "headline": "US orders federal civilian agencies to remove DeepSeek AI from their systems",
+      "label": "FACT",
+      "date": "2026-10-23"
+    },
+    {
+      "headline": "DeepSeek and MiniMax reportedly win approval to deploy models overseas",
+      "label": "RUMOR",
+      "date": "2026-10-23"
+    },
+    {
+      "headline": "OpenAI and Poland's NASK partner on AI safety research",
+      "label": "FACT",
+      "date": "2026-10-23"
+    },
+    {
+      "headline": "OpenAI brings its models to Google Cloud",
+      "label": "FACT",
+      "date": "2026-10-23"
+    },
+    {
+      "headline": "Anthropic previews Claude Duet, a proactive personal AI agent",
+      "label": "FACT",
+      "date": "2026-10-23"
+    },
+    {
+      "headline": "Recursive releases Flint, a free laptop coding model it says AI largely built",
+      "label": "FACT",
+      "date": "2026-10-23"
+    },
+    {
+      "headline": "OpenAI expands ChatGPT Ads to 26 more countries",
+      "label": "FACT",
+      "date": "2026-10-23"
     }
   ],
-  "last_sent": "2026-10-21"
+  "last_sent": "2026-10-23"
 }
