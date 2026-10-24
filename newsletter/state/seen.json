@@ -66,7 +66,8 @@
     "KV cache",
     "Guardian agent",
     "Physical AI",
-    "Distillation"
+    "Distillation",
+    "Decision model"
   ],
   "news": [
     {
@@ -508,7 +509,17 @@
       "headline": "OpenAI expands ChatGPT Ads to 26 more countries",
       "label": "FACT",
       "date": "2026-10-23"
+    },
+    {
+      "headline": "OpenAI makes its Decisions API generally available",
+      "label": "FACT",
+      "date": "2026-10-24"
+    },
+    {
+      "headline": "Nvidia's Huang says Kazakhstan could become a major AI compute hub for Europe",
+      "label": "FACT",
+      "date": "2026-10-24"
     }
   ],
-  "last_sent": "2026-10-23"
+  "last_sent": "2026-10-24"
 }
