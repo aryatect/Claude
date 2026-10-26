@@ -67,7 +67,9 @@
     "Guardian agent",
     "Physical AI",
     "Distillation",
-    "Decision model"
+    "Decision model",
+    "Full-duplex model",
+    "Neocloud"
   ],
   "news": [
     {
@@ -258,11 +260,6 @@
     {
       "headline": "Ray Dalio: AI is a 'classic bubble' nearing its burst point",
       "label": "JUDGEMENT",
-      "date": "2026-10-08"
-    },
-    {
-      "headline": "Musk's SpaceX reportedly wants $40 billion to buy chips",
-      "label": "RUMOR",
       "date": "2026-10-08"
     },
     {
@@ -519,7 +516,27 @@
       "headline": "Nvidia's Huang says Kazakhstan could become a major AI compute hub for Europe",
       "label": "FACT",
       "date": "2026-10-24"
+    },
+    {
+      "headline": "OpenAI says it will no longer train its AI models on the live internet",
+      "label": "FACT",
+      "date": "2026-10-26"
+    },
+    {
+      "headline": "Musk's SpaceX reportedly wants $40 billion to buy chips",
+      "label": "RUMOR",
+      "date": "2026-10-26"
+    },
+    {
+      "headline": "Block previews Dessa, a full-duplex voice model trained only on speech",
+      "label": "RUMOR",
+      "date": "2026-10-26"
+    },
+    {
+      "headline": "Moonshot unveils Kimi K3.1 Pro, with open weights promised for November 4",
+      "label": "RUMOR",
+      "date": "2026-10-26"
     }
   ],
-  "last_sent": "2026-10-24"
+  "last_sent": "2026-10-26"
 }
