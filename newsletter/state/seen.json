@@ -69,7 +69,8 @@
     "Distillation",
     "Decision model",
     "Full-duplex model",
-    "Neocloud"
+    "Neocloud",
+    "Section 230"
   ],
   "news": [
     {
@@ -536,7 +537,17 @@
       "headline": "Moonshot unveils Kimi K3.1 Pro, with open weights promised for November 4",
       "label": "RUMOR",
       "date": "2026-10-26"
+    },
+    {
+      "headline": "Anthropic files publicly for a Nasdaq IPO under the ticker ANT",
+      "label": "FACT",
+      "date": "2026-10-27"
+    },
+    {
+      "headline": "Meta plans to raise up to $95 billion in equity to fund AI",
+      "label": "FACT",
+      "date": "2026-10-27"
     }
   ],
-  "last_sent": "2026-10-26"
+  "last_sent": "2026-10-27"
 }
