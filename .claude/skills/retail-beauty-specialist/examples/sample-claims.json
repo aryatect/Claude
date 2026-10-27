@@ -1,0 +1,75 @@
+{
+  "_comment": "SYNTHETIC demo ledger for offline audits and tests. Statements and URLs are placeholders, not research findings. Run with --offline.",
+  "question": "EXAMPLE: Does Example Beauty Co. offer virtual try-on, and how mature is the category?",
+  "as_of": "2026-10-27",
+  "claims": [
+    {
+      "id": "C-001",
+      "label": "FACT",
+      "statement": "EXAMPLE: An analyst firm rates virtual try-on as a mainstream beauty retail capability.",
+      "topic": "virtual try-on",
+      "entity": "Industry",
+      "status": "FOUND",
+      "confidence": "HIGH",
+      "sources": [
+        {"url": "https://www.gartner.com/en/example-note", "quote": "example quote", "retrieved": "2026-10-20", "paywalled": true}
+      ]
+    },
+    {
+      "id": "C-002",
+      "label": "FACT",
+      "statement": "EXAMPLE: Trade press reports Example Beauty Co. launched virtual try-on in its app.",
+      "topic": "virtual try-on",
+      "entity": "Example Beauty Co.",
+      "status": "FOUND",
+      "confidence": "MEDIUM",
+      "sources": [
+        {"url": "https://www.retaildive.com/news/example-article", "quote": "example quote", "retrieved": "2026-10-21"}
+      ],
+      "as_of_version": "iOS app 2026.9"
+    },
+    {
+      "id": "C-003",
+      "label": "FACT",
+      "statement": "EXAMPLE: Example Beauty Co.'s published feature list has no shade-matching tool.",
+      "topic": "shade matching",
+      "entity": "Example Beauty Co.",
+      "status": "FEATURE_NOT_FOUND",
+      "confidence": "LOW",
+      "sources": [
+        {"url": "https://www.examplebeauty.com/app-features", "retrieved": "2026-10-21"}
+      ],
+      "search_log": ["examplebeauty.com/app-features full list", "site:examplebeauty.com shade match"]
+    },
+    {
+      "id": "C-004",
+      "label": "FACT",
+      "statement": "EXAMPLE: Try-on usage share for Example Beauty Co. app sessions.",
+      "topic": "virtual try-on",
+      "entity": "Example Beauty Co.",
+      "status": "INFO_NOT_AVAILABLE",
+      "confidence": "N/A",
+      "search_log": ["10-K full text search 'try-on'", "retaildive.com, glossy.co, wwd.com searches"]
+    },
+    {
+      "id": "C-005",
+      "label": "INFERENCE",
+      "statement": "EXAMPLE: Example Beauty Co. is at parity with the market on try-on but behind on shade matching.",
+      "topic": "virtual try-on",
+      "entity": "Example Beauty Co.",
+      "status": "FOUND",
+      "confidence": "LOW",
+      "basis": ["C-001", "C-002", "C-003"]
+    },
+    {
+      "id": "C-006",
+      "label": "JUDGEMENT",
+      "statement": "EXAMPLE: Shade matching should be the next investment, ahead of further try-on work.",
+      "topic": "shade matching",
+      "entity": "Example Beauty Co.",
+      "status": "FOUND",
+      "confidence": "LOW",
+      "basis": ["C-003", "C-005"]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Retail beauty specialist claims ledger",
+  "type": "object",
+  "required": ["question", "as_of", "claims"],
+  "properties": {
+    "question": {"type": "string"},
+    "as_of": {"type": "string", "format": "date"},
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "label", "statement", "status", "confidence"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^C-\\d{3,}$"},
+          "label": {"enum": ["FACT", "INFERENCE", "JUDGEMENT"]},
+          "statement": {"type": "string"},
+          "topic": {"type": "string"},
+          "entity": {"type": "string", "description": "Company/product the claim is about; its own domains (source-tiers.json entity_domains) count as LOW"},
+          "status": {"enum": ["FOUND", "FEATURE_NOT_FOUND", "INFO_NOT_AVAILABLE"]},
+          "confidence": {"enum": ["HIGH", "MEDIUM", "LOW", "N/A"]},
+          "as_of_version": {"type": "string", "description": "Product release/version where the capability appears"},
+          "sources": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["url", "retrieved"],
+              "properties": {
+                "url": {"type": "string", "format": "uri"},
+                "quote": {"type": "string", "description": "Exact supporting text from the page; required for FACT + FOUND"},
+                "retrieved": {"type": "string", "format": "date"},
+                "paywalled": {"type": "boolean"}
+              }
+            }
+          },
+          "basis": {"type": "array", "items": {"type": "string"}, "description": "Claim IDs an INFERENCE/JUDGEMENT rests on"},
+          "search_log": {"type": "array", "items": {"type": "string"}, "description": "Queries/URLs checked; required for FEATURE_NOT_FOUND and INFO_NOT_AVAILABLE"}
+        }
+      }
+    }
+  }
+}
