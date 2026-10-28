@@ -70,7 +70,8 @@
     "Decision model",
     "Full-duplex model",
     "Neocloud",
-    "Section 230"
+    "Section 230",
+    "Tokenmaxxing"
   ],
   "news": [
     {
@@ -546,8 +547,18 @@
     {
       "headline": "Meta plans to raise up to $95 billion in equity to fund AI",
       "label": "FACT",
-      "date": "2026-10-27"
+      "date": "2026-10-28"
+    },
+    {
+      "headline": "OpenAI and Oracle expand partnership, bringing ChatGPT and Codex into Oracle apps",
+      "label": "FACT",
+      "date": "2026-10-28"
+    },
+    {
+      "headline": "Amazon memo tells engineers to be pickier about AI use, calling token counts 'deeply flawed'",
+      "label": "RUMOR",
+      "date": "2026-10-28"
     }
   ],
-  "last_sent": "2026-10-27"
+  "last_sent": "2026-10-28"
 }
