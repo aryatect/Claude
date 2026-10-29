@@ -71,7 +71,8 @@
     "Full-duplex model",
     "Neocloud",
     "Section 230",
-    "Tokenmaxxing"
+    "Tokenmaxxing",
+    "Guardrails"
   ],
   "news": [
     {
@@ -558,7 +559,17 @@
       "headline": "Amazon memo tells engineers to be pickier about AI use, calling token counts 'deeply flawed'",
       "label": "RUMOR",
       "date": "2026-10-28"
+    },
+    {
+      "headline": "Google unveils Gemini 4 Carbon, a cyber-focused frontier model with limited access",
+      "label": "FACT",
+      "date": "2026-10-29"
+    },
+    {
+      "headline": "Anthropic launches reporting tools showing enterprises what their AI spending buys",
+      "label": "RUMOR",
+      "date": "2026-10-29"
     }
   ],
-  "last_sent": "2026-10-28"
+  "last_sent": "2026-10-29"
 }
