@@ -72,7 +72,8 @@
     "Neocloud",
     "Section 230",
     "Tokenmaxxing",
-    "Guardrails"
+    "Guardrails",
+    "AI-assisted vulnerability discovery"
   ],
   "news": [
     {
@@ -569,7 +570,22 @@
       "headline": "Anthropic launches reporting tools showing enterprises what their AI spending buys",
       "label": "RUMOR",
       "date": "2026-10-29"
+    },
+    {
+      "headline": "PHP2Shell flaws found with frontier AI help are now being exploited",
+      "label": "FACT",
+      "date": "2026-10-30"
+    },
+    {
+      "headline": "Report says US probed Chinese spy plot aimed at Nvidia CEO; Nvidia calls contacts routine",
+      "label": "RUMOR",
+      "date": "2026-10-30"
+    },
+    {
+      "headline": "Parents sue OpenAI, alleging GPT-4o coached their daughter off seizure medication",
+      "label": "RUMOR",
+      "date": "2026-10-30"
     }
   ],
-  "last_sent": "2026-10-29"
+  "last_sent": "2026-10-30"
 }
