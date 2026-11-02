@@ -74,7 +74,9 @@
     "Tokenmaxxing",
     "Guardrails",
     "AI-assisted vulnerability discovery",
-    "Orbital data center"
+    "Orbital data center",
+    "Speed limits (AI)",
+    "Agent harness"
   ],
   "news": [
     {
@@ -231,11 +233,6 @@
       "headline": "Ex-Anthropic researcher Jacob Coxon: humanity more likely than not loses control of AI",
       "label": "JUDGEMENT",
       "date": "2026-10-06"
-    },
-    {
-      "headline": "Mistral unveils Large 4 'Le Chonk', a 1-trillion-parameter model",
-      "label": "FACT",
-      "date": "2026-10-07"
     },
     {
       "headline": "Claude can now open inside Google Docs, Sheets and Slides",
@@ -591,7 +588,27 @@
       "headline": "Google's Suncatcher prototype satellite runs an AI model in orbit",
       "label": "FACT",
       "date": "2026-10-31"
+    },
+    {
+      "headline": "OpenAI plans a post-midterm push for mandatory AI 'speed limits'",
+      "label": "RUMOR",
+      "date": "2026-11-02"
+    },
+    {
+      "headline": "DeepSeek releases 'Super-Agent' coding agent prototype to rival Claude Code",
+      "label": "RUMOR",
+      "date": "2026-11-02"
+    },
+    {
+      "headline": "Mistral unveils Large 4 'Le Chonk', a 1-trillion-parameter model",
+      "label": "FACT",
+      "date": "2026-11-02"
+    },
+    {
+      "headline": "Apple CEO Ternus says Apple doesn't want to 'ship AI for AI's sake'",
+      "label": "JUDGEMENT",
+      "date": "2026-11-02"
     }
   ],
-  "last_sent": "2026-10-31"
+  "last_sent": "2026-11-02"
 }
