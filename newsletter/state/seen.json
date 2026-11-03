@@ -76,7 +76,8 @@
     "AI-assisted vulnerability discovery",
     "Orbital data center",
     "Speed limits (AI)",
-    "Agent harness"
+    "Agent harness",
+    "Weight space programming"
   ],
   "news": [
     {
@@ -608,7 +609,22 @@
       "headline": "Apple CEO Ternus says Apple doesn't want to 'ship AI for AI's sake'",
       "label": "JUDGEMENT",
       "date": "2026-11-02"
+    },
+    {
+      "headline": "Anthropic warns it may soon reach its own threshold for self-accelerating AI",
+      "label": "RUMOR",
+      "date": "2026-11-03"
+    },
+    {
+      "headline": "MIT researchers use GPT-6 Astra to edit Qwen's weights, lifting a math score from 7.9% to 48.1%",
+      "label": "RUMOR",
+      "date": "2026-11-03"
+    },
+    {
+      "headline": "Nvidia reportedly tells data center clients to trim China business",
+      "label": "RUMOR",
+      "date": "2026-11-03"
     }
   ],
-  "last_sent": "2026-11-02"
+  "last_sent": "2026-11-03"
 }
