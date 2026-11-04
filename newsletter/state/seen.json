@@ -77,7 +77,9 @@
     "Orbital data center",
     "Speed limits (AI)",
     "Agent harness",
-    "Weight space programming"
+    "Weight space programming",
+    "Provable inference",
+    "Agent observability"
   ],
   "news": [
     {
@@ -624,7 +626,22 @@
       "headline": "Nvidia reportedly tells data center clients to trim China business",
       "label": "RUMOR",
       "date": "2026-11-03"
+    },
+    {
+      "headline": "Anthropic is working on FlashProve, an open-source system to prove which model produced an output",
+      "label": "FACT",
+      "date": "2026-11-04"
+    },
+    {
+      "headline": "CrowdStrike agrees to buy AI security startups Fiddler AI and Dreadnode",
+      "label": "RUMOR",
+      "date": "2026-11-04"
+    },
+    {
+      "headline": "AI stocks slide as Democrat wins Texas governor's race on a data center moratorium pledge",
+      "label": "RUMOR",
+      "date": "2026-11-04"
     }
   ],
-  "last_sent": "2026-11-03"
+  "last_sent": "2026-11-04"
 }
