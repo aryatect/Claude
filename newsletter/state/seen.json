@@ -79,7 +79,8 @@
     "Agent harness",
     "Weight space programming",
     "Provable inference",
-    "Agent observability"
+    "Agent observability",
+    "Agent orchestration"
   ],
   "news": [
     {
@@ -641,7 +642,22 @@
       "headline": "AI stocks slide as Democrat wins Texas governor's race on a data center moratorium pledge",
       "label": "RUMOR",
       "date": "2026-11-04"
+    },
+    {
+      "headline": "Google will cut off Search for schools that disable its AI tools, drawing backlash",
+      "label": "FACT",
+      "date": "2026-11-05"
+    },
+    {
+      "headline": "Meta acquires AI coding startup Conductor",
+      "label": "FACT",
+      "date": "2026-11-05"
+    },
+    {
+      "headline": "Apple warns in its annual filing that AI agents may act in unintended or unpredictable ways",
+      "label": "RUMOR",
+      "date": "2026-11-05"
     }
   ],
-  "last_sent": "2026-11-04"
+  "last_sent": "2026-11-05"
 }
