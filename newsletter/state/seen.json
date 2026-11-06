@@ -80,7 +80,8 @@
     "Weight space programming",
     "Provable inference",
     "Agent observability",
-    "Agent orchestration"
+    "Agent orchestration",
+    "Cyber model"
   ],
   "news": [
     {
@@ -657,7 +658,27 @@
       "headline": "Apple warns in its annual filing that AI agents may act in unintended or unpredictable ways",
       "label": "RUMOR",
       "date": "2026-11-05"
+    },
+    {
+      "headline": "OpenAI launches GPT-6 Cyber for vetted defenders",
+      "label": "FACT",
+      "date": "2026-11-06"
+    },
+    {
+      "headline": "Claude gets a Personal Finance tool that reads bank and card accounts",
+      "label": "FACT",
+      "date": "2026-11-06"
+    },
+    {
+      "headline": "Google releases Gemini Omni 1.2 Flash with 15-second video and a 30% price cut",
+      "label": "FACT",
+      "date": "2026-11-06"
+    },
+    {
+      "headline": "OpenAI says it will change how it handles data center deals after voter outcry",
+      "label": "FACT",
+      "date": "2026-11-06"
     }
   ],
-  "last_sent": "2026-11-05"
+  "last_sent": "2026-11-06"
 }
