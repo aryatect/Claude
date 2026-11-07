@@ -81,7 +81,8 @@
     "Provable inference",
     "Agent observability",
     "Agent orchestration",
-    "Cyber model"
+    "Cyber model",
+    "Data center moratorium"
   ],
   "news": [
     {
@@ -585,11 +586,6 @@
       "date": "2026-10-30"
     },
     {
-      "headline": "OpenAI reportedly targets $30 billion in new funding ahead of IPO",
-      "label": "RUMOR",
-      "date": "2026-10-31"
-    },
-    {
       "headline": "Google's Suncatcher prototype satellite runs an AI model in orbit",
       "label": "FACT",
       "date": "2026-10-31"
@@ -678,7 +674,17 @@
       "headline": "OpenAI says it will change how it handles data center deals after voter outcry",
       "label": "FACT",
       "date": "2026-11-06"
+    },
+    {
+      "headline": "OpenAI reportedly targets $30 billion in new funding ahead of IPO",
+      "label": "RUMOR",
+      "date": "2026-11-07"
+    },
+    {
+      "headline": "AI stocks sell off after midterms as voters back data center limits",
+      "label": "FACT",
+      "date": "2026-11-07"
     }
   ],
-  "last_sent": "2026-11-06"
+  "last_sent": "2026-11-07"
 }
