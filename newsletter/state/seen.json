@@ -82,7 +82,8 @@
     "Agent observability",
     "Agent orchestration",
     "Cyber model",
-    "Data center moratorium"
+    "Data center moratorium",
+    "Quantization"
   ],
   "news": [
     {
@@ -541,11 +542,6 @@
       "date": "2026-10-26"
     },
     {
-      "headline": "Anthropic files publicly for a Nasdaq IPO under the ticker ANT",
-      "label": "FACT",
-      "date": "2026-10-27"
-    },
-    {
       "headline": "Meta plans to raise up to $95 billion in equity to fund AI",
       "label": "FACT",
       "date": "2026-10-28"
@@ -573,11 +569,6 @@
     {
       "headline": "PHP2Shell flaws found with frontier AI help are now being exploited",
       "label": "FACT",
-      "date": "2026-10-30"
-    },
-    {
-      "headline": "Report says US probed Chinese spy plot aimed at Nvidia CEO; Nvidia calls contacts routine",
-      "label": "RUMOR",
       "date": "2026-10-30"
     },
     {
@@ -684,7 +675,17 @@
       "headline": "AI stocks sell off after midterms as voters back data center limits",
       "label": "FACT",
       "date": "2026-11-07"
+    },
+    {
+      "headline": "Report says US probed Chinese spy plot aimed at Nvidia CEO; Nvidia calls contacts routine",
+      "label": "RUMOR",
+      "date": "2026-11-08"
+    },
+    {
+      "headline": "Anthropic files publicly for a Nasdaq IPO under the ticker ANT",
+      "label": "RUMOR",
+      "date": "2026-11-08"
     }
   ],
-  "last_sent": "2026-11-07"
+  "last_sent": "2026-11-08"
 }
