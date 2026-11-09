@@ -157,3 +157,19 @@ def test_skill_script_rejects_bad_json(tmp_path):
     r = subprocess.run([sys.executable, SKILL_SCRIPT, str(tmp_path / "v.json"), "--offline"],
                        capture_output=True, text=True)
     assert r.returncode == 2 and "'TRUE' not in" in r.stderr and "summary: missing" in r.stderr
+
+
+@pytest.mark.skipif(not os.path.exists(SKILL_SCRIPT), reason="skill not present")
+def test_skill_html_report(tmp_path):
+    verdict = case([claim(ev_for=src(A, B), ev_against=src("input"))], coincidences=2)
+    verdict["claims"][0]["text"] = "<script>alert(1)</script>"
+    (tmp_path / "v.json").write_text(json.dumps(verdict))
+    (tmp_path / "urls.txt").write_text(A + "\n" + B + "\n")
+    subprocess.run([sys.executable, SKILL_SCRIPT, str(tmp_path / "v.json"), "--retrieved", str(tmp_path / "urls.txt"),
+                    "--html", str(tmp_path / "r.html"), "--title", "Test & check"], check=True, capture_output=True)
+    page = (tmp_path / "r.html").read_text()
+    assert page.startswith("<!doctype html>") and "<title>Test &amp; check</title>" in page
+    assert "<script>" not in page and "&lt;script&gt;" in page          # user text is escaped
+    assert "Coincidence cluster" in page and "prefers-color-scheme:dark" in page
+    assert f'href="{A}"' in page and ">[1]</a>" in page and ">[2]</a>" in page   # numbered sources
+    assert "http://" not in page.replace("http://www.w3.org", "")       # no external assets

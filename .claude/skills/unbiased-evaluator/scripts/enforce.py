@@ -3,6 +3,7 @@
 Usage
   python enforce.py verdict.json --retrieved urls.txt [--json-out final.json]
   python enforce.py verdict.json --offline
+  python enforce.py verdict.json --retrieved urls.txt --html report.html --title "Outage review"
   cat verdict.json | python enforce.py - --retrieved urls.txt
 
 urls.txt: one URL per line - every page actually retrieved during research.
@@ -247,6 +248,166 @@ def render(d: dict) -> str:
     return "\n".join(out) + "\n"
 
 
+# ---------------------------------------------------------------- HTML report
+_TONE = {
+    "SUPPORTED": "good", "PARTLY_SUPPORTED": "warn", "MIXED": "warn",
+    "UNSUPPORTED": "bad", "CONTRADICTED": "bad",
+    "UNVERIFIED": "muted", "INSUFFICIENT_EVIDENCE": "muted", "NOT_CHECKABLE": "muted",
+    "FACT": "info", "INFERENCE": "accent", "JUDGEMENT": "muted",
+}
+
+_CSS = """
+:root{--bg:#f6f7f9;--card:#fff;--ink:#1d2330;--sub:#5b6474;--line:#e3e6eb;
+--good:#1f7a4d;--good-bg:#e3f4ea;--warn:#8a5a00;--warn-bg:#fdf1d8;--bad:#a8323a;--bad-bg:#fbe5e6;
+--muted:#4f5868;--muted-bg:#eceef2;--info:#1f5fa8;--info-bg:#e2edfa;--accent:#6b3fa8;--accent-bg:#efe6fa}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12151b;--card:#1b1f27;--ink:#e7eaf0;
+--sub:#9aa3b2;--line:#2c323d;--good:#7fd6a5;--good-bg:#173a28;--warn:#f0c46c;--warn-bg:#3d3015;--bad:#f2959b;
+--bad-bg:#432024;--muted:#b4bccb;--muted-bg:#2a303b;--info:#8db9f0;--info-bg:#1b2d45;
+--accent:#c3a2f0;--accent-bg:#2e2342}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:980px;margin:0 auto;padding:24px 16px 48px}
+h1{font-size:1.05rem;letter-spacing:.06em;text-transform:uppercase;color:var(--sub);margin:0 0 12px}
+h2{font-size:1.15rem;margin:0 0 12px}
+section,.hero{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;margin-top:16px}
+.hero{margin-top:0;display:grid;gap:14px}
+.verdict{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+.verdict .pill{font-size:1.25rem;padding:8px 16px}
+.summary{font-size:1.08rem;margin:0}
+.restate{color:var(--sub);margin:0}
+.pill{display:inline-block;padding:2px 10px;border-radius:999px;font-weight:600;font-size:.8rem;white-space:nowrap}
+.good{color:var(--good);background:var(--good-bg)}.warn{color:var(--warn);background:var(--warn-bg)}
+.bad{color:var(--bad);background:var(--bad-bg)}.muted{color:var(--muted);background:var(--muted-bg)}
+.info{color:var(--info);background:var(--info-bg)}.accent{color:var(--accent);background:var(--accent-bg)}
+.meter{display:inline-flex;align-items:center;gap:8px;color:var(--sub);font-size:.9rem}
+.meter i{display:inline-block;width:22px;height:8px;border-radius:4px;background:var(--line)}
+.meter i.on{background:var(--ink)}
+.alert{border-radius:12px;padding:12px 16px;background:var(--warn-bg);color:var(--warn);font-weight:600}
+.stats{display:flex;flex-wrap:wrap;gap:8px}
+.stat{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:6px 12px;font-size:.9rem}
+.stat b{font-size:1.05rem}
+table{width:100%;border-collapse:collapse;font-size:.94rem}
+th{text-align:left;font-size:.75rem;text-transform:uppercase;letter-spacing:.05em;color:var(--sub);
+border-bottom:1px solid var(--line);padding:8px}
+td{border-bottom:1px solid var(--line);padding:10px 8px;vertical-align:top}
+tr:last-child td{border-bottom:0}
+td.why{color:var(--sub);font-size:.88rem}
+.core{font-size:.75rem;color:var(--sub)}
+a.ref{color:var(--info);text-decoration:none;font-weight:600}
+ul{margin:0;padding-left:20px}li{margin:4px 0}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.cols section{margin-top:0}
+ol.sources{padding-left:24px;word-break:break-all}ol.sources a{color:var(--info)}
+footer{color:var(--sub);font-size:.82rem;margin-top:20px;text-align:center}
+@media (max-width:700px){
+.cols{grid-template-columns:1fr}
+table.stack thead{display:none}
+table.stack tr{display:block;border-bottom:1px solid var(--line);padding:8px 0}
+table.stack td{display:block;border:0;padding:4px 0}
+table.stack td[data-k]::before{content:attr(data-k);display:block;font-size:.72rem;text-transform:uppercase;
+letter-spacing:.05em;color:var(--sub)}}
+"""
+
+
+def render_html(d: dict, title: str = "Unbiased Evaluation") -> str:
+    """Render the enforced verdict as a standalone, presentable HTML page (no external assets)."""
+    from datetime import date
+    from html import escape as e
+
+    refs: dict[str, int] = {}
+
+    def ref(src: str) -> str:
+        if src == "input":
+            return '<span class="pill muted">input</span>'
+        if not src.startswith("https://"):
+            return e(src)
+        n = refs.setdefault(src, len(refs) + 1)
+        return f'<a class="ref" href="{e(src)}" target="_blank" rel="noopener" title="{e(src)}">[{n}]</a>'
+
+    def pill(v: str) -> str:
+        return f'<span class="pill {_TONE.get(v, "muted")}">{e(v.replace("_", " "))}</span>'
+
+    def meter(level: str) -> str:
+        on = CONF.index(level) + 1
+        return ('<span class="meter">' + "".join(f'<i class="{"on" if i < on else ""}"></i>' for i in range(3))
+                + f" {e(level.title())}</span>")
+
+    def ul(items) -> str:
+        return "<ul>" + "".join(f"<li>{e(str(x))}</li>" for x in items) + "</ul>" if items else "<p>None found.</p>"
+
+    def evid(items) -> str:
+        return "<br>".join(f"{e(x['summary'])} {ref(x['source'])}" for x in items) or "-"
+
+    w, claims = d["whole"], d["claims"]
+    counts = {}
+    for c in claims:
+        counts[c["verdict"]] = counts.get(c["verdict"], 0) + 1
+    stats = "".join(f'<span class="stat"><b>{n}</b> {e(k.replace("_", " ").lower())}</span>'
+                    for k, n in counts.items())
+
+    out = [f'<!doctype html><html lang="en"><head><meta charset="utf-8">'
+           f'<meta name="viewport" content="width=device-width,initial-scale=1"><title>{e(title)}</title>'
+           f"<style>{_CSS}</style></head><body><main>",
+           f'<div class="hero"><h1>{e(title)}</h1>',
+           f'<div class="verdict">{pill(w["verdict"])} {meter(w["confidence"])}</div>',
+           f'<p class="summary">{e(w["summary"])}</p>']
+    if d.get("coincidence_cluster"):
+        out.append(f'<div class="alert">Coincidence cluster: {len(d["coincidences"])} coincidences. '
+                   "Read this story skeptically.</div>")
+    out += [f'<p class="restate"><b>Neutral restatement:</b> {e(d["neutral_restatement"])}</p>',
+            f'<div class="stats"><span class="stat"><b>{len(claims)}</b> claims</span>{stats}'
+            f'<span class="stat"><b>{len(d["coincidences"])}</b> coincidences</span>'
+            f'<span class="stat"><b>{len(d["hypotheses"])}</b> hypotheses</span></div></div>']
+
+    out.append('<section><h2>Parts</h2><table class="stack"><thead><tr><th>ID</th><th>Claim</th>'
+               "<th>Verdict</th><th>Confidence</th><th>Evidence for</th><th>Evidence against</th></tr></thead><tbody>")
+    for c in claims:
+        out.append(
+            f'<tr><td data-k="ID"><b>{e(c["id"])}</b>{"<div class=core>core</div>" if c["load_bearing"] else ""}</td>'
+            f'<td data-k="Claim">{e(c["text"])}<div style="margin-top:6px">{pill(c["label"])}</div>'
+            f'<div class="why" style="margin-top:6px">{e(c["reasoning"])}</div></td>'
+            f'<td data-k="Verdict">{pill(c["verdict"])}</td><td data-k="Confidence">{meter(c["confidence"])}</td>'
+            f'<td data-k="Evidence for">{evid(c["evidence_for"])}</td>'
+            f'<td data-k="Evidence against">{evid(c["evidence_against"])}</td></tr>')
+    out.append("</tbody></table></section>")
+
+    if d["coincidences"]:
+        out.append('<section><h2>Coincidences</h2><table class="stack"><thead><tr><th>#</th><th>Coincidence</th>'
+                   "<th>Claims</th><th>Estimated chance</th><th>Independent</th></tr></thead><tbody>")
+        for i, k in enumerate(d["coincidences"], 1):
+            out.append(f'<tr><td data-k="#">{i}</td><td data-k="Coincidence">{e(k["description"])}</td>'
+                       f'<td data-k="Claims">{e(", ".join(k["claim_ids"]))}</td>'
+                       f'<td data-k="Estimated chance">{e(k["estimated_chance"])}</td>'
+                       f'<td data-k="Independent">{"Yes" if k["independent_of_others"] else "No"}</td></tr>')
+        out.append("</tbody></table></section>")
+
+    out.append('<section><h2>Competing hypotheses</h2><table class="stack"><thead><tr><th>Rank</th>'
+               "<th>Hypothesis</th><th>Evidence against it</th><th>Coincidences needed</th></tr></thead><tbody>")
+    for h in sorted(d["hypotheses"], key=lambda h: h["rank"]):
+        out.append(f'<tr><td data-k="Rank"><b>{h["rank"]}</b></td>'
+                   f'<td data-k="Hypothesis"><b>{e(h["name"])}</b><div class="why">{e(h["explanation"])}</div></td>'
+                   f'<td data-k="Evidence against it">{ul(h["inconsistent_evidence"])}</td>'
+                   f'<td data-k="Coincidences needed">{h["depends_on_coincidences"]}</td></tr>')
+    out.append("</tbody></table></section>")
+
+    b = d["bias_checks"]
+    out += ['<div class="cols" style="margin-top:16px">',
+            f'<section><h2>Bias checks</h2><p><b>Loaded language</b></p>{ul(b["loaded_language"])}'
+            f'<p><b>Missing perspectives</b></p>{ul(b["missing_perspectives"])}'
+            f'<p><b>Source independence</b></p><p>{e(b["source_independence"])}</p></section>',
+            f'<section><h2>Whole-picture issues</h2>{ul(w["coherence_issues"])}'
+            f'<h2 style="margin-top:16px">What would change this verdict</h2>{ul(w["what_would_change_my_mind"])}'
+            "</section></div>"]
+    if d.get("enforcement_notes"):
+        out.append(f'<section><h2>Rule overrides</h2>{ul(d["enforcement_notes"])}</section>')
+    if refs:
+        out.append('<section><h2>Sources</h2><ol class="sources">' + "".join(
+            f'<li><a href="{e(u)}" target="_blank" rel="noopener">{e(u)}</a></li>' for u in refs) + "</ol></section>")
+    out.append(f"<footer>Generated {date.today().isoformat()} by the Unbiased Evaluator skill. "
+               "Rules limit overconfidence; they do not remove all bias.</footer></main></body></html>")
+    return "\n".join(out)
+
+
 # ---------------------------------------------------------------- main
 def main(argv=None) -> int:
     p = argparse.ArgumentParser(description="Apply evaluator rules and render the verdict grid.")
@@ -254,6 +415,8 @@ def main(argv=None) -> int:
     p.add_argument("--retrieved", help="File with one retrieved URL per line.")
     p.add_argument("--offline", action="store_true", help="No web research was done.")
     p.add_argument("--json-out", help="Also write the enforced verdict JSON here.")
+    p.add_argument("--html", help="Also write a presentable HTML report here.")
+    p.add_argument("--title", default="Unbiased Evaluation", help="Title for the HTML report.")
     a = p.parse_args(argv)
     if not a.offline and not a.retrieved:
         p.error("give --retrieved urls.txt, or --offline if no web research was done")
@@ -274,6 +437,9 @@ def main(argv=None) -> int:
     if a.json_out:
         with open(a.json_out, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=2)
+    if a.html:
+        with open(a.html, "w", encoding="utf-8") as f:
+            f.write(render_html(data, a.title))
     return 0
 
 

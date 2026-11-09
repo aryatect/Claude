@@ -1,6 +1,6 @@
 ---
 name: unbiased-evaluator
-description: Evidence-first, impartial evaluation of whether a claim, news story, rumour, workplace incident, root-cause story or technical finding holds up. Splits it into atomic claims, labels each Fact / Inference / Judgement, verifies them on the web for AND against, tests competing explanations, judges the parts and the whole, and treats two or more coincidences as a red flag. Returns a verdict grid with sources and confidence. Use this skill whenever the user asks "is this true", "does this add up", "fact-check this", "evaluate this claim or story", "who is right", "is this plausible", "too many coincidences", "what really caused this", or pastes an article, post, timeline, incident report or account of events and wants an unbiased assessment, even if they don't say "evaluate". Not for planning a response or strategy against a person.
+description: Evidence-first, impartial evaluation of whether a claim, news story, rumour, workplace incident, root-cause story or technical finding holds up. Splits it into atomic claims, labels each Fact / Inference / Judgement, verifies them on the web for AND against, tests competing explanations, judges the parts and the whole, and treats two or more coincidences as a red flag. Returns a presentable HTML report with a verdict grid, sources and confidence. Use this skill whenever the user asks "is this true", "does this add up", "fact-check this", "evaluate this claim or story", "who is right", "is this plausible", "too many coincidences", "what really caused this", or pastes an article, post, timeline, incident report or account of events and wants an unbiased assessment, even if they don't say "evaluate". Not for planning a response or strategy against a person.
 ---
 
 # Unbiased Evaluator
@@ -80,12 +80,12 @@ These rules exist so the verdict cannot outrun the evidence. If you can run code
 evaluation as JSON (shape in `references/verdict-format.md`) and run:
 
 ```bash
-python scripts/enforce.py verdict.json --retrieved urls.txt          # web mode
-python scripts/enforce.py verdict.json --offline                     # no web search
+python scripts/enforce.py verdict.json --retrieved urls.txt --html report.html --title "<short title>"
+python scripts/enforce.py verdict.json --offline --html report.html --title "<short title>"
 ```
 
-`urls.txt` is one retrieved URL per line. The script applies the rules, lists every override, and
-prints the final Markdown report. Use its output as your answer. If you cannot run code, apply the
+`urls.txt` is one retrieved URL per line. The script applies the rules, lists every override,
+prints a Markdown version to stdout, and writes the HTML report. If you cannot run code, apply the
 same rules by hand:
 
 | Rule | Effect |
@@ -104,30 +104,29 @@ List every rule you applied under "Rule overrides".
 
 ## Report format
 
-Lead with the answer, then the detail:
+The deliverable is the **HTML report** written by `--html`: a single self-contained page (no
+external files) with light and dark themes and a phone-friendly layout. Share it as a file (or
+publish it as a page if the environment offers that), then give a short chat reply:
 
-```
-# Verdict: <WHOLE VERDICT> (confidence <LEVEL>)
-<two-sentence summary>
-> Coincidence cluster: <n> coincidences. Read skeptically.   (only if n >= 2)
-**Neutral restatement:** ...
+1. The verdict and confidence in one line, e.g. `Verdict: PARTLY SUPPORTED (confidence LOW)`.
+2. Two sentences on why.
+3. The coincidence-cluster warning, if there is one.
+4. Where the full report is.
 
-## Parts
-| ID | Claim | Label | Core | Verdict | Conf. | Sources for | Sources against |
+The HTML report contains, in this order:
 
-## Coincidences
-| # | Coincidence | Claims | Est. chance | Independent |
+| Section | Content |
+|---|---|
+| Header | Title, whole verdict pill, confidence meter, summary, coincidence-cluster banner, neutral restatement, counts |
+| Parts | Each claim with label, core marker, verdict, confidence, reasoning, evidence for and against with numbered source links |
+| Coincidences | Description, linked claims, estimated chance, independence |
+| Competing hypotheses | Ranked, with evidence against each and coincidences needed |
+| Bias checks / Whole picture | Loaded language, missing perspectives, source independence; coherence issues; what would change the verdict |
+| Rule overrides | Every rule the script applied |
+| Sources | Numbered list of every cited URL |
 
-## Competing hypotheses
-| Rank | Hypothesis | Evidence against it | Coincidences needed |
-
-## Bias checks
-- Loaded language / Missing perspectives / Source independence
-
-## Whole-picture issues
-## What would change this verdict
-## Rule overrides
-```
+If code cannot run, reply with the Markdown version instead, using the same sections in the same
+order, with tables for Parts, Coincidences and Competing hypotheses.
 
 Write in plain, direct language. When evidence is missing, say "unknown" rather than filling the
 gap. When nothing can be verified, say so: "No verifiable evidence found."

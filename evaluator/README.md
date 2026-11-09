@@ -49,5 +49,5 @@ details, because web search sends queries outside your organisation.
 
 ## Skill version
 The same method is packaged as a Claude skill in `.claude/skills/unbiased-evaluator/`. Claude Code
-loads it automatically in this repo. Its `scripts/enforce.py` applies the same hard rules; the
+loads it automatically in this repo. Its `scripts/enforce.py` applies the same hard rules and writes a presentable HTML report (`--html`); the
 tests run every rule against both copies so they cannot drift apart.
