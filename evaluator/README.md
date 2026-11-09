@@ -46,3 +46,8 @@ Env overrides: `EVALUATOR_MODEL` (default `claude-opus-5-5`), `EVALUATOR_EFFORT`
 No model is fully unbiased. The rules limit overconfidence; they do not remove model or search-result
 bias. Coincidence probabilities are the model's estimates. Use `--offline` for private workplace
 details, because web search sends queries outside your organisation.
+
+## Skill version
+The same method is packaged as a Claude skill in `.claude/skills/unbiased-evaluator/`. Claude Code
+loads it automatically in this repo. Its `scripts/enforce.py` applies the same hard rules; the
+tests run every rule against both copies so they cannot drift apart.
