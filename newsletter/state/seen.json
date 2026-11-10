@@ -84,7 +84,8 @@
     "Cyber model",
     "Data center moratorium",
     "Quantization",
-    "AI organization"
+    "AI organization",
+    "Confidential computing"
   ],
   "news": [
     {
@@ -678,11 +679,6 @@
       "date": "2026-11-07"
     },
     {
-      "headline": "Anthropic files publicly for a Nasdaq IPO under the ticker ANT",
-      "label": "RUMOR",
-      "date": "2026-11-08"
-    },
-    {
       "headline": "Report says US probed Chinese spy plot aimed at Nvidia CEO; Nvidia calls contacts routine",
       "label": "RUMOR",
       "date": "2026-11-09"
@@ -691,7 +687,22 @@
       "headline": "Anthropic study finds AI organizations are more effective but less aligned than single agents",
       "label": "FACT",
       "date": "2026-11-09"
+    },
+    {
+      "headline": "Anthropic releases Claude Fable 5.2 and Mythos 5.2 ahead of its IPO",
+      "label": "FACT",
+      "date": "2026-11-10"
+    },
+    {
+      "headline": "Google unveils TPU 8tx and TPU 8i Max chips for confidential and agent workloads",
+      "label": "FACT",
+      "date": "2026-11-10"
+    },
+    {
+      "headline": "Anthropic files publicly for a Nasdaq IPO under the ticker ANT",
+      "label": "RUMOR",
+      "date": "2026-11-10"
     }
   ],
-  "last_sent": "2026-11-09"
+  "last_sent": "2026-11-10"
 }
