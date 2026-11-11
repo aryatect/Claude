@@ -85,7 +85,8 @@
     "Data center moratorium",
     "Quantization",
     "AI organization",
-    "Confidential computing"
+    "Confidential computing",
+    "Frontier developer"
   ],
   "news": [
     {
@@ -699,10 +700,25 @@
       "date": "2026-11-10"
     },
     {
+      "headline": "Anthropic launches Claude Meetings, Whiteboards and Sheets for office work",
+      "label": "FACT",
+      "date": "2026-11-11"
+    },
+    {
       "headline": "Anthropic files publicly for a Nasdaq IPO under the ticker ANT",
       "label": "RUMOR",
-      "date": "2026-11-10"
+      "date": "2026-11-11"
+    },
+    {
+      "headline": "New York opens RAISE Act registration portal for frontier AI developers",
+      "label": "RUMOR",
+      "date": "2026-11-11"
+    },
+    {
+      "headline": "Australia to create an AI safety regulator with mandatory incident reporting",
+      "label": "RUMOR",
+      "date": "2026-11-11"
     }
   ],
-  "last_sent": "2026-11-10"
+  "last_sent": "2026-11-11"
 }
