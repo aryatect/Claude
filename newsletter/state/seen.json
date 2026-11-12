@@ -86,7 +86,8 @@
     "Quantization",
     "AI organization",
     "Confidential computing",
-    "Frontier developer"
+    "Frontier developer",
+    "Persistent agent"
   ],
   "news": [
     {
@@ -560,11 +561,6 @@
       "date": "2026-10-28"
     },
     {
-      "headline": "Google unveils Gemini 4 Carbon, a cyber-focused frontier model with limited access",
-      "label": "FACT",
-      "date": "2026-10-29"
-    },
-    {
       "headline": "Anthropic launches reporting tools showing enterprises what their AI spending buys",
       "label": "RUMOR",
       "date": "2026-10-29"
@@ -680,11 +676,6 @@
       "date": "2026-11-07"
     },
     {
-      "headline": "Report says US probed Chinese spy plot aimed at Nvidia CEO; Nvidia calls contacts routine",
-      "label": "RUMOR",
-      "date": "2026-11-09"
-    },
-    {
       "headline": "Anthropic study finds AI organizations are more effective but less aligned than single agents",
       "label": "FACT",
       "date": "2026-11-09"
@@ -718,7 +709,27 @@
       "headline": "Australia to create an AI safety regulator with mandatory incident reporting",
       "label": "RUMOR",
       "date": "2026-11-11"
+    },
+    {
+      "headline": "Report says US probed Chinese spy plot aimed at Nvidia CEO; Nvidia calls contacts routine",
+      "label": "FACT",
+      "date": "2026-11-12"
+    },
+    {
+      "headline": "CoreWeave raises 2026 revenue outlook; shares jump on AI cloud demand",
+      "label": "FACT",
+      "date": "2026-11-12"
+    },
+    {
+      "headline": "OpenAI's quarterly revenue reportedly crosses $10 billion for the first time",
+      "label": "RUMOR",
+      "date": "2026-11-12"
+    },
+    {
+      "headline": "Google unveils Gemini 4 Carbon, a cyber-focused frontier model with limited access",
+      "label": "FACT",
+      "date": "2026-11-12"
     }
   ],
-  "last_sent": "2026-11-11"
+  "last_sent": "2026-11-12"
 }
