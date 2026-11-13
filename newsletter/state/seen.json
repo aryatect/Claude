@@ -87,7 +87,8 @@
     "AI organization",
     "Confidential computing",
     "Frontier developer",
-    "Persistent agent"
+    "Persistent agent",
+    "Human in the loop"
   ],
   "news": [
     {
@@ -711,11 +712,6 @@
       "date": "2026-11-11"
     },
     {
-      "headline": "Report says US probed Chinese spy plot aimed at Nvidia CEO; Nvidia calls contacts routine",
-      "label": "FACT",
-      "date": "2026-11-12"
-    },
-    {
       "headline": "CoreWeave raises 2026 revenue outlook; shares jump on AI cloud demand",
       "label": "FACT",
       "date": "2026-11-12"
@@ -729,7 +725,22 @@
       "headline": "Google unveils Gemini 4 Carbon, a cyber-focused frontier model with limited access",
       "label": "FACT",
       "date": "2026-11-12"
+    },
+    {
+      "headline": "Report says US probed Chinese spy plot aimed at Nvidia CEO; Nvidia calls contacts routine",
+      "label": "FACT",
+      "date": "2026-11-13"
+    },
+    {
+      "headline": "United Airlines blocks AI agents from booking flights, citing security risks",
+      "label": "FACT",
+      "date": "2026-11-13"
+    },
+    {
+      "headline": "Anthropic discloses over $10 billion in new cloud commitments; Lambda deal may be cancelled",
+      "label": "RUMOR",
+      "date": "2026-11-13"
     }
   ],
-  "last_sent": "2026-11-12"
+  "last_sent": "2026-11-13"
 }
