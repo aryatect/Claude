@@ -88,7 +88,8 @@
     "Confidential computing",
     "Frontier developer",
     "Persistent agent",
-    "Human in the loop"
+    "Human in the loop",
+    "Agentic commerce"
   ],
   "news": [
     {
@@ -697,11 +698,6 @@
       "date": "2026-11-11"
     },
     {
-      "headline": "Anthropic files publicly for a Nasdaq IPO under the ticker ANT",
-      "label": "RUMOR",
-      "date": "2026-11-11"
-    },
-    {
       "headline": "New York opens RAISE Act registration portal for frontier AI developers",
       "label": "RUMOR",
       "date": "2026-11-11"
@@ -740,7 +736,27 @@
       "headline": "Anthropic discloses over $10 billion in new cloud commitments; Lambda deal may be cancelled",
       "label": "RUMOR",
       "date": "2026-11-13"
+    },
+    {
+      "headline": "OpenAI launches ChatGPT Wallet so its 'dots' agents can buy things for users",
+      "label": "FACT",
+      "date": "2026-11-15"
+    },
+    {
+      "headline": "Anthropic files publicly for a Nasdaq IPO under the ticker ANT",
+      "label": "RUMOR",
+      "date": "2026-11-15"
+    },
+    {
+      "headline": "White House AI task force urges easing liability to encourage AI incident reporting",
+      "label": "RUMOR",
+      "date": "2026-11-15"
+    },
+    {
+      "headline": "Democrats plan a wave of AI bills and executive testimony once they control Congress in January",
+      "label": "RUMOR",
+      "date": "2026-11-15"
     }
   ],
-  "last_sent": "2026-11-13"
+  "last_sent": "2026-11-15"
 }
