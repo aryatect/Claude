@@ -89,7 +89,8 @@
     "Frontier developer",
     "Persistent agent",
     "Human in the loop",
-    "Agentic commerce"
+    "Agentic commerce",
+    "Pax Silica"
   ],
   "news": [
     {
@@ -756,7 +757,22 @@
       "headline": "Democrats plan a wave of AI bills and executive testimony once they control Congress in January",
       "label": "RUMOR",
       "date": "2026-11-15"
+    },
+    {
+      "headline": "US and allies agree to guard AI supply chains from China, FT says",
+      "label": "RUMOR",
+      "date": "2026-11-16"
+    },
+    {
+      "headline": "Alibaba unveils new flagship AI model, claiming it rivals US leaders",
+      "label": "RUMOR",
+      "date": "2026-11-16"
+    },
+    {
+      "headline": "Nvidia reportedly sought Taiwan's help over employee's chip smuggling case",
+      "label": "RUMOR",
+      "date": "2026-11-16"
     }
   ],
-  "last_sent": "2026-11-15"
+  "last_sent": "2026-11-16"
 }
