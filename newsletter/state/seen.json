@@ -90,7 +90,8 @@
     "Persistent agent",
     "Human in the loop",
     "Agentic commerce",
-    "Pax Silica"
+    "Pax Silica",
+    "Remote Access Security Act (RASA)"
   ],
   "news": [
     {
@@ -772,7 +773,22 @@
       "headline": "Nvidia reportedly sought Taiwan's help over employee's chip smuggling case",
       "label": "RUMOR",
       "date": "2026-11-16"
+    },
+    {
+      "headline": "US tightens AI chip export rules to curb China's remote access to Nvidia chips",
+      "label": "FACT",
+      "date": "2026-11-17"
+    },
+    {
+      "headline": "Nvidia reportedly warns chip buyers of legal risks tied to China AI access",
+      "label": "RUMOR",
+      "date": "2026-11-17"
+    },
+    {
+      "headline": "OpenAI releases a new image classifier to detect AI-generated child abuse material",
+      "label": "FACT",
+      "date": "2026-11-17"
     }
   ],
-  "last_sent": "2026-11-16"
+  "last_sent": "2026-11-17"
 }
