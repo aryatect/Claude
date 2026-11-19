@@ -91,7 +91,8 @@
     "Human in the loop",
     "Agentic commerce",
     "Pax Silica",
-    "Remote Access Security Act (RASA)"
+    "Remote Access Security Act (RASA)",
+    "Agent identity"
   ],
   "news": [
     {
@@ -745,11 +746,6 @@
       "date": "2026-11-15"
     },
     {
-      "headline": "Anthropic files publicly for a Nasdaq IPO under the ticker ANT",
-      "label": "RUMOR",
-      "date": "2026-11-15"
-    },
-    {
       "headline": "White House AI task force urges easing liability to encourage AI incident reporting",
       "label": "RUMOR",
       "date": "2026-11-15"
@@ -788,7 +784,37 @@
       "headline": "OpenAI releases a new image classifier to detect AI-generated child abuse material",
       "label": "FACT",
       "date": "2026-11-17"
+    },
+    {
+      "headline": "Anthropic files publicly for a Nasdaq IPO under the ticker ANT",
+      "label": "FACT",
+      "date": "2026-11-19"
+    },
+    {
+      "headline": "Nvidia stops shipping licensed Hopper chips to China as earnings top estimates",
+      "label": "FACT",
+      "date": "2026-11-19"
+    },
+    {
+      "headline": "Google launches Gemini 4 Hydrogen, a faster model for agentic workflows",
+      "label": "FACT",
+      "date": "2026-11-19"
+    },
+    {
+      "headline": "Microsoft expands Agent 365 to govern agents from Anthropic, OpenAI and others",
+      "label": "FACT",
+      "date": "2026-11-19"
+    },
+    {
+      "headline": "Palo Alto Networks to buy AI startup Applied Compute for $4.5 billion",
+      "label": "FACT",
+      "date": "2026-11-19"
+    },
+    {
+      "headline": "Trump warns at APEC against AI regulation that would 'stifle' the industry",
+      "label": "RUMOR",
+      "date": "2026-11-19"
     }
   ],
-  "last_sent": "2026-11-17"
+  "last_sent": "2026-11-19"
 }
