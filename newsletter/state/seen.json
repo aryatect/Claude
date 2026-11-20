@@ -92,7 +92,8 @@
     "Agentic commerce",
     "Pax Silica",
     "Remote Access Security Act (RASA)",
-    "Agent identity"
+    "Agent identity",
+    "Computer use"
   ],
   "news": [
     {
@@ -786,11 +787,6 @@
       "date": "2026-11-17"
     },
     {
-      "headline": "Anthropic files publicly for a Nasdaq IPO under the ticker ANT",
-      "label": "FACT",
-      "date": "2026-11-19"
-    },
-    {
       "headline": "Nvidia stops shipping licensed Hopper chips to China as earnings top estimates",
       "label": "FACT",
       "date": "2026-11-19"
@@ -814,7 +810,32 @@
       "headline": "Trump warns at APEC against AI regulation that would 'stifle' the industry",
       "label": "RUMOR",
       "date": "2026-11-19"
+    },
+    {
+      "headline": "Anthropic files publicly for a Nasdaq IPO under the ticker ANT",
+      "label": "FACT",
+      "date": "2026-11-20"
+    },
+    {
+      "headline": "AI-led stock selloff spreads to Asia and Europe after Anthropic's debut",
+      "label": "FACT",
+      "date": "2026-11-20"
+    },
+    {
+      "headline": "Commerce approved sales of more than 879,000 AI chips to Chinese companies, House committee says",
+      "label": "FACT",
+      "date": "2026-11-20"
+    },
+    {
+      "headline": "Google gives Gemini computer use on Mac",
+      "label": "FACT",
+      "date": "2026-11-20"
+    },
+    {
+      "headline": "OpenAI launches GPT-6.2 Astra and Sol to a mixed reception from power users",
+      "label": "FACT",
+      "date": "2026-11-20"
     }
   ],
-  "last_sent": "2026-11-19"
+  "last_sent": "2026-11-20"
 }
