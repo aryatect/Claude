@@ -93,7 +93,8 @@
     "Pax Silica",
     "Remote Access Security Act (RASA)",
     "Agent identity",
-    "Computer use"
+    "Computer use",
+    "Proactive agent"
   ],
   "news": [
     {
@@ -812,16 +813,6 @@
       "date": "2026-11-19"
     },
     {
-      "headline": "Anthropic files publicly for a Nasdaq IPO under the ticker ANT",
-      "label": "FACT",
-      "date": "2026-11-20"
-    },
-    {
-      "headline": "AI-led stock selloff spreads to Asia and Europe after Anthropic's debut",
-      "label": "FACT",
-      "date": "2026-11-20"
-    },
-    {
       "headline": "Commerce approved sales of more than 879,000 AI chips to Chinese companies, House committee says",
       "label": "FACT",
       "date": "2026-11-20"
@@ -835,7 +826,27 @@
       "headline": "OpenAI launches GPT-6.2 Astra and Sol to a mixed reception from power users",
       "label": "FACT",
       "date": "2026-11-20"
+    },
+    {
+      "headline": "Anthropic files publicly for a Nasdaq IPO under the ticker ANT",
+      "label": "FACT",
+      "date": "2026-11-21"
+    },
+    {
+      "headline": "AI-led stock selloff spreads to Asia and Europe after Anthropic's debut",
+      "label": "FACT",
+      "date": "2026-11-21"
+    },
+    {
+      "headline": "SEC reportedly examining Nvidia's accounting practices, Reuters says",
+      "label": "RUMOR",
+      "date": "2026-11-21"
+    },
+    {
+      "headline": "Apple is reportedly building its own autonomous AI agent",
+      "label": "RUMOR",
+      "date": "2026-11-21"
     }
   ],
-  "last_sent": "2026-11-20"
+  "last_sent": "2026-11-21"
 }
