@@ -94,7 +94,8 @@
     "Remote Access Security Act (RASA)",
     "Agent identity",
     "Computer use",
-    "Proactive agent"
+    "Proactive agent",
+    "Token factory"
   ],
   "news": [
     {
@@ -828,11 +829,6 @@
       "date": "2026-11-20"
     },
     {
-      "headline": "Anthropic files publicly for a Nasdaq IPO under the ticker ANT",
-      "label": "FACT",
-      "date": "2026-11-21"
-    },
-    {
       "headline": "AI-led stock selloff spreads to Asia and Europe after Anthropic's debut",
       "label": "FACT",
       "date": "2026-11-21"
@@ -846,7 +842,27 @@
       "headline": "Apple is reportedly building its own autonomous AI agent",
       "label": "RUMOR",
       "date": "2026-11-21"
+    },
+    {
+      "headline": "Anthropic mathematician claims a Claude-assisted proof of the generalized Riemann hypothesis",
+      "label": "RUMOR",
+      "date": "2026-11-22"
+    },
+    {
+      "headline": "Anthropic files publicly for a Nasdaq IPO under the ticker ANT",
+      "label": "FACT",
+      "date": "2026-11-22"
+    },
+    {
+      "headline": "China plans stronger standards for measuring and billing AI tokens",
+      "label": "RUMOR",
+      "date": "2026-11-22"
+    },
+    {
+      "headline": "Nvidia reportedly nears deal for diffusion-AI startup Inception for $500 million or more",
+      "label": "RUMOR",
+      "date": "2026-11-22"
     }
   ],
-  "last_sent": "2026-11-21"
+  "last_sent": "2026-11-22"
 }
