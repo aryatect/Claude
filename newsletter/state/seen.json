@@ -95,7 +95,8 @@
     "Agent identity",
     "Computer use",
     "Proactive agent",
-    "Token factory"
+    "Token factory",
+    "CoT monitor"
   ],
   "news": [
     {
@@ -862,7 +863,17 @@
       "headline": "Nvidia reportedly nears deal for diffusion-AI startup Inception for $500 million or more",
       "label": "RUMOR",
       "date": "2026-11-22"
+    },
+    {
+      "headline": "OpenAI's chief scientist urges industry-wide limits on AI development",
+      "label": "FACT",
+      "date": "2026-11-23"
+    },
+    {
+      "headline": "Google launches Gemini 4 Neon with strong coding scores at $3/$15 per million tokens",
+      "label": "FACT",
+      "date": "2026-11-23"
     }
   ],
-  "last_sent": "2026-11-22"
+  "last_sent": "2026-11-23"
 }
