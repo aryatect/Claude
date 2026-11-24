@@ -96,7 +96,8 @@
     "Computer use",
     "Proactive agent",
     "Token factory",
-    "CoT monitor"
+    "CoT monitor",
+    "Agentic code review"
   ],
   "news": [
     {
@@ -730,11 +731,6 @@
       "date": "2026-11-12"
     },
     {
-      "headline": "Report says US probed Chinese spy plot aimed at Nvidia CEO; Nvidia calls contacts routine",
-      "label": "FACT",
-      "date": "2026-11-13"
-    },
-    {
       "headline": "United Airlines blocks AI agents from booking flights, citing security risks",
       "label": "FACT",
       "date": "2026-11-13"
@@ -873,7 +869,22 @@
       "headline": "Google launches Gemini 4 Neon with strong coding scores at $3/$15 per million tokens",
       "label": "FACT",
       "date": "2026-11-23"
+    },
+    {
+      "headline": "Report says US probed Chinese spy plot aimed at Nvidia CEO; Nvidia calls contacts routine",
+      "label": "FACT",
+      "date": "2026-11-24"
+    },
+    {
+      "headline": "Amazon to buy Decart's AI optimization tech and hire its team for a reported $7.5 billion",
+      "label": "FACT",
+      "date": "2026-11-24"
+    },
+    {
+      "headline": "Anthropic launches Claude Ship, letting AI agents review, fix and approve code changes",
+      "label": "RUMOR",
+      "date": "2026-11-24"
     }
   ],
-  "last_sent": "2026-11-23"
+  "last_sent": "2026-11-24"
 }
