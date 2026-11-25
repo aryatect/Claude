@@ -97,7 +97,8 @@
     "Proactive agent",
     "Token factory",
     "CoT monitor",
-    "Agentic code review"
+    "Agentic code review",
+    "Personal Intelligence"
   ],
   "news": [
     {
@@ -826,11 +827,6 @@
       "date": "2026-11-20"
     },
     {
-      "headline": "AI-led stock selloff spreads to Asia and Europe after Anthropic's debut",
-      "label": "FACT",
-      "date": "2026-11-21"
-    },
-    {
       "headline": "SEC reportedly examining Nvidia's accounting practices, Reuters says",
       "label": "RUMOR",
       "date": "2026-11-21"
@@ -843,11 +839,6 @@
     {
       "headline": "Anthropic mathematician claims a Claude-assisted proof of the generalized Riemann hypothesis",
       "label": "RUMOR",
-      "date": "2026-11-22"
-    },
-    {
-      "headline": "Anthropic files publicly for a Nasdaq IPO under the ticker ANT",
-      "label": "FACT",
       "date": "2026-11-22"
     },
     {
@@ -884,7 +875,22 @@
       "headline": "Anthropic launches Claude Ship, letting AI agents review, fix and approve code changes",
       "label": "RUMOR",
       "date": "2026-11-24"
+    },
+    {
+      "headline": "Anthropic files publicly for a Nasdaq IPO under the ticker ANT",
+      "label": "FACT",
+      "date": "2026-11-25"
+    },
+    {
+      "headline": "AI-led stock selloff spreads to Asia and Europe after Anthropic's debut",
+      "label": "FACT",
+      "date": "2026-11-25"
+    },
+    {
+      "headline": "Google's AI Mode can now draw on Wallet and Drive for personalized answers",
+      "label": "FACT",
+      "date": "2026-11-25"
     }
   ],
-  "last_sent": "2026-11-24"
+  "last_sent": "2026-11-25"
 }
