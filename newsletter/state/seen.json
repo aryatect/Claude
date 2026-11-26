@@ -98,7 +98,8 @@
     "Token factory",
     "CoT monitor",
     "Agentic code review",
-    "Personal Intelligence"
+    "Personal Intelligence",
+    "Agent gateway"
   ],
   "news": [
     {
@@ -890,7 +891,22 @@
       "headline": "Google's AI Mode can now draw on Wallet and Drive for personalized answers",
       "label": "FACT",
       "date": "2026-11-25"
+    },
+    {
+      "headline": "42 state attorneys general challenge Character.AI's plan to sell users' private chats",
+      "label": "FACT",
+      "date": "2026-11-26"
+    },
+    {
+      "headline": "Walmart lets shoppers use Meta's Muse AI agent for Black Friday deals",
+      "label": "RUMOR",
+      "date": "2026-11-26"
+    },
+    {
+      "headline": "Nvidia chip sellers reportedly seek new buyers as US curbs China AI chip access",
+      "label": "RUMOR",
+      "date": "2026-11-26"
     }
   ],
-  "last_sent": "2026-11-25"
+  "last_sent": "2026-11-26"
 }
