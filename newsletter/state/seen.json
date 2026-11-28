@@ -99,7 +99,8 @@
     "CoT monitor",
     "Agentic code review",
     "Personal Intelligence",
-    "Agent gateway"
+    "Agent gateway",
+    "Agent OS"
   ],
   "news": [
     {
@@ -906,7 +907,27 @@
       "headline": "Nvidia chip sellers reportedly seek new buyers as US curbs China AI chip access",
       "label": "RUMOR",
       "date": "2026-11-26"
+    },
+    {
+      "headline": "China hedge fund founder's AI startup readies first product, an operating system kernel for AI agents",
+      "label": "RUMOR",
+      "date": "2026-11-28"
+    },
+    {
+      "headline": "SAP reportedly weighs cutting at least 10,000 jobs in AI restructuring",
+      "label": "RUMOR",
+      "date": "2026-11-28"
+    },
+    {
+      "headline": "Nvidia reportedly pauses server shipments to Southeast Asia while it checks export compliance",
+      "label": "RUMOR",
+      "date": "2026-11-28"
+    },
+    {
+      "headline": "CNBC: AI shopping agents are growing, but Amazon and others block or limit them",
+      "label": "JUDGEMENT",
+      "date": "2026-11-28"
     }
   ],
-  "last_sent": "2026-11-26"
+  "last_sent": "2026-11-28"
 }
